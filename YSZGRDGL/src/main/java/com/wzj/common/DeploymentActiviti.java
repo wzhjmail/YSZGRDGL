@@ -20,7 +20,6 @@ public class DeploymentActiviti implements ApplicationListener<ContextRefreshedE
 		if(first)
 			System.out.println("<<<<<<<<<<<spring初始化完成>>>>>>>>>>>>");
 	}
-
 }
 //该函数在开启服务器，初始化时执行一次。
 @Component("deploymentActivitiBean")
