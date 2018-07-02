@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"  >
+
+<!-- ======================== 调度工厂 ======================== -->  
+<bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+    <property name="triggers">  
+        <list>  
+            <ref bean="CronTriggerBean"/>  
+        </list>  
+    </property>  
+</bean>
+<!-- 年定时器 -->
+<bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+    <property name="jobDetail" ref="SpringQtzJobMethod"></property>  
+    <property name="cronExpression" value="1 0 0 1 1 ?"></property><!--每年的1月1日1秒触发  -->
+</bean>
+	<bean id="SpringQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+    <property name="targetObject">  
+        <ref bean="timeTask"/><!-- 每年执行的函数 -->  
+    </property>  
+    <property name="targetMethod">  <!-- 要执行的方法名称 -->  
+        <value>run</value>  
+    </property>  
+</bean>
+</beans>

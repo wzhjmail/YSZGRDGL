@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.PbtSampleMapper2">
+  <resultMap id="BaseResultMap" type="com.wzj.pojo.PbtSample2">
+    <result column="F_SAMPLE_KEY" jdbcType="VARCHAR" property="f_sample_key" />
+    <result column="F_SAMPLE_NAME" jdbcType="VARCHAR" property="f_sample_name" />
+    <result column="F_SAMPLE_CODE" jdbcType="VARCHAR" property="f_sample_code" />
+    <result column="UF_0047228" jdbcType="VARCHAR" property="uf_0047228" />
+    <result column="UF_0047251" jdbcType="VARCHAR" property="uf_0047251" />
+    <result column="UF_0047233" jdbcType="VARCHAR" property="uf_0047233" />
+    <result column="UF_0047232" jdbcType="VARCHAR" property="uf_0047232" />
+    <result column="UF_0047220" jdbcType="VARCHAR" property="uf_0047220" />
+    <result column="UF_0047218" jdbcType="VARCHAR" property="uf_0047218" />
+    <result column="UF_0047331" jdbcType="VARCHAR" property="uf_0047331" />
+    <result column="UF_0047231" jdbcType="VARCHAR" property="uf_0047231" />
+    <result column="UF_0047330" jdbcType="VARCHAR" property="uf_0047330" />
+    <result column="F_SAMPLE_COUNT" jdbcType="INTEGER" property="f_sample_count" />
+    <result column="UF_0047335" jdbcType="VARCHAR" property="uf_0047335" />
+    <result column="F_CODE_TYPE" jdbcType="VARCHAR" property="f_code_type" />
+    <result column="F_BATCH_TYPE" jdbcType="VARCHAR" property="f_batch_type" />
+    <result column="UF_0047236" jdbcType="VARCHAR" property="uf_0047236" />
+    <result column="UF_0047332" jdbcType="VARCHAR" property="uf_0047332" />
+    <result column="F_BATCH_CODE" jdbcType="VARCHAR" property="f_batch_code" />
+    <result column="UF_0047238" jdbcType="VARCHAR" property="uf_0047238" />
+    <result column="F_SPOT_CODE" jdbcType="VARCHAR" property="f_spot_code" />
+    <result column="UF_0047234" jdbcType="VARCHAR" property="uf_0047234" />
+    <result column="UF_004711" jdbcType="DATE" property="uf_004711" />
+    <result column="UF_0047141" jdbcType="VARCHAR" property="uf_0047141" />
+    <result column="F_OPERATION_KEY" jdbcType="VARCHAR" property="f_operation_key" />
+    <result column="HASREAD" jdbcType="CHAR" property="hasRead" />
+    <result column="WRONG" jdbcType="VARCHAR" property="wrong" />
+    <result column="TITLENO" jdbcType="VARCHAR" property="titleNo" />
+    <result column="MFILE" jdbcType="BLOB" property="mfile" />
+	<result column="UF_004761"  jdbcType="VARCHAR" property="uf_004761"/>
+	<result column="BRANCHNAME" jdbcType="VARCHAR" property="brachName"/>
+	<result column="UF_004742"  jdbcType="VARCHAR" property="uf_004742"/>
+	<result column="UF_004746"  jdbcType="VARCHAR" property="uf_004746"/>
+	<result column="UF_004744"  jdbcType="VARCHAR" property="uf_004744"/>
+	<result column="UF_004743"  jdbcType="VARCHAR" property="uf_004743"/>
+	<result column="POSTCODE"   jdbcType="VARCHAR" property="postcode"/>
+	<result column="UF_004763"  jdbcType="VARCHAR" property="uf_004763"/>
+	<result column="UF_004762"  jdbcType="VARCHAR" property="uf_004762"/>
+	<result column="UF_004764"  jdbcType="VARCHAR" property="uf_004764"/>
+	<result column="POSTALCODE" jdbcType="VARCHAR" property="postalcode"/>
+	<result column="UF_004757"  jdbcType="VARCHAR" property="uf_004757"/>
+	<result column="UF_004785"  jdbcType="VARCHAR" property="uf_004785"/>
+	<result column="UF_004784"  jdbcType="VARCHAR" property="uf_004784"/>
+	<result column="UF_004786"  jdbcType="VARCHAR" property="uf_004786"/>
+	<result column="UF_004791"  jdbcType="VARCHAR" property="uf_004791"/>
+	<result column="UF_004778"  jdbcType="VARCHAR" property="uf_004778"/>
+	<result column="UF_004780"  jdbcType="VARCHAR" property="uf_004780"/>
+	<result column="UF_004790"  jdbcType="VARCHAR" property="uf_004790"/>
+	<result column="UF_004779"  jdbcType="VARCHAR" property="uf_004779"/>
+	<result column="UF_004798"  jdbcType="VARCHAR" property="uf_004798"/>
+	<result column="UF_004758"  jdbcType="VARCHAR" property="uf_004758"/>
+	<result column="UF_004787"  jdbcType="VARCHAR" property="uf_004787"/>
+	<result column="UF_004759"  jdbcType="VARCHAR" property="uf_004759"/>
+	<result column="UF_004788"  jdbcType="VARCHAR" property="uf_004788"/>
+	<result column="UF_004774"  jdbcType="VARCHAR" property="uf_004774"/>
+	<result column="UF_004789"  jdbcType="VARCHAR" property="uf_004789"/>
+	<result column="UF_004794"  jdbcType="VARCHAR" property="uf_004794"/>
+	<result column="UF_004795"  jdbcType="VARCHAR" property="uf_004795"/>
+	<result column="UF_004760"  jdbcType="VARCHAR" property="uf_004760"/>
+	<result column="UF_004773"  jdbcType="VARCHAR" property="uf_004773"/>
+	<result column="UF_004782"  jdbcType="VARCHAR" property="uf_004782"/>
+  </resultMap>
+  
+  <insert id="insert" parameterType="com.wzj.pojo.PbtSample2">
+    insert into lims_sample
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="f_sample_key != null">
+        F_SAMPLE_KEY,
+      </if>
+      <if test="f_sample_name != null">
+        F_SAMPLE_NAME,
+      </if>
+      <if test="f_sample_code != null">
+        F_SAMPLE_CODE,
+      </if>
+      <if test="uf_0047228 != null">
+        UF_0047228,
+      </if>
+      <if test="uf_0047251 != null">
+        UF_0047251,
+      </if>
+      <if test="uf_0047233 != null">
+        UF_0047233,
+      </if>
+      <if test="uf_0047232 != null">
+        UF_0047232,
+      </if>
+      <if test="uf_0047220 != null">
+        UF_0047220,
+      </if>
+      <if test="uf_0047218 != null">
+        UF_0047218,
+      </if>
+      <if test="uf_0047331 != null">
+        UF_0047331,
+      </if>
+      <if test="uf_0047231 != null">
+        UF_0047231,
+      </if>
+      <if test="uf_0047330 != null">
+        UF_0047330,
+      </if>
+      <if test="f_sample_count != null">
+        F_SAMPLE_COUNT,
+      </if>
+      <if test="uf_0047335 != null">
+        UF_0047335,
+      </if>
+      <if test="f_code_type != null">
+        F_CODE_TYPE,
+      </if>
+      <if test="f_batch_type != null">
+        F_BATCH_TYPE,
+      </if>
+      <if test="uf_0047236 != null">
+        UF_0047236,
+      </if>
+      <if test="uf_0047332 != null">
+        UF_0047332,
+      </if>
+      <if test="f_batch_code != null">
+        F_BATCH_CODE,
+      </if>
+      <if test="uf_0047238 != null">
+        UF_0047238,
+      </if>
+      <if test="f_spot_code != null">
+        F_SPOT_CODE,
+      </if>
+      <if test="uf_0047234 != null">
+        UF_0047234,
+      </if>
+      <if test="uf_004711 != null">
+        UF_004711,
+      </if>
+      <if test="uf_0047141 != null">
+        UF_0047141,
+      </if>
+      <if test="f_operation_key != null">
+        F_OPERATION_KEY,
+      </if>
+      <if test="hasRead != null">
+        HASREAD,
+      </if>
+      <if test="wrong != null">
+        WRONG,
+      </if>
+      <if test="titleNo != null">
+        TITLENO,
+      </if>
+      <if test="mfile != null">
+        MFILE,
+      </if>
+      <if test="uf_004761 != null">
+        UF_004761,
+      </if>
+      <if test="branchName != null">
+        BRANCHNAME,
+      </if>
+      <if test="uf_004744 != null">
+        UF_004744,
+      </if>
+      <if test="uf_004743 != null">
+        UF_004743,
+      </if>
+      <if test="postcode != null">
+        POSTCODE,
+      </if>
+      <if test="uf_004763 != null">
+        UF_004763,
+      </if>
+      <if test="uf_004762 != null">
+        UF_004762,
+      </if>
+      <if test="uf_004764 != null">
+        UF_004764,
+      </if>
+      <if test="postalcode != null">
+        POSTALCODE,
+      </if>
+	  <if test="uf_004757 != null">
+        UF_004757,
+      </if>
+      <if test="uf_004785 != null">
+        UF_004785,
+      </if>
+      <if test="uf_004784 != null">
+        UF_004784,
+      </if>
+      <if test="uf_004786 != null">
+        UF_004786,
+      </if>
+      <if test="uf_004791 != null">
+        UF_004791,
+      </if>
+      <if test="uf_004778 != null">
+        UF_004778,
+      </if>
+      <if test="uf_004780 != null">
+        UF_004780,
+      </if>
+      <if test="uf_004790 != null">
+        UF_004790,
+      </if>
+      <if test="uf_004779 != null">
+        UF_004779,
+      </if>
+      <if test="uf_004798 != null">
+        UF_004798,
+      </if>
+      <if test="uf_004758 != null">
+        UF_004758,
+      </if>
+      <if test="uf_004787 != null">
+        UF_004787,
+      </if>
+      <if test="uf_004759 != null">
+        UF_004759,
+      </if>
+      <if test="uf_004788 != null">
+        UF_004788,
+      </if>
+      <if test="uf_004774 != null">
+        UF_004774,
+      </if>
+      <if test="uf_004789 != null">
+        UF_004789,
+      </if>
+      <if test="uf_004794 != null">
+        UF_004794,
+      </if>
+      <if test="uf_004795 != null">
+        UF_004795,
+      </if>
+      <if test="uf_004760 != null">
+        UF_004760,
+      </if>
+      <if test="uf_004773 != null">
+        UF_004773,
+      </if>
+      <if test="uf_004782 != null">
+        UF_004782,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="f_sample_key != null">
+        #{f_sample_key,jdbcType=VARCHAR},
+      </if>
+      <if test="f_sample_name != null">
+        #{f_sample_name,jdbcType=VARCHAR},
+      </if>
+      <if test="f_sample_code != null">
+        #{f_sample_code,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047228 != null">
+        #{uf_0047228,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047251 != null">
+        #{uf_0047251,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047233 != null">
+        #{uf_0047233,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047232 != null">
+        #{uf_0047232,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047220 != null">
+        #{uf_0047220,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047218 != null">
+        #{uf_0047218,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047331 != null">
+        #{uf_0047331,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047231 != null">
+        #{uf_0047231,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047330 != null">
+        #{uf_0047330,jdbcType=VARCHAR},
+      </if>
+      <if test="f_sample_count != null">
+        #{f_sample_count,jdbcType=INTEGER},
+      </if>
+      <if test="uf_0047335 != null">
+        #{uf_0047335,jdbcType=VARCHAR},
+      </if>
+      <if test="f_code_type != null">
+        #{f_code_type,jdbcType=VARCHAR},
+      </if>
+      <if test="f_batch_type != null">
+        #{f_batch_type,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047236 != null">
+        #{uf_0047236,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047332 != null">
+        #{uf_0047332,jdbcType=VARCHAR},
+      </if>
+      <if test="f_batch_code != null">
+        #{f_batch_code,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047238 != null">
+        #{uf_0047238,jdbcType=VARCHAR},
+      </if>
+      <if test="f_spot_code != null">
+        #{f_spot_code,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_0047234 != null">
+        #{uf_0047234,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004711 != null">
+        #{uf_004711,jdbcType=DATE},
+      </if>
+      <if test="uf_0047141 != null">
+        #{uf_0047141,jdbcType=VARCHAR},
+      </if>
+      <if test="f_operation_key != null">
+        #{f_operation_key,jdbcType=VARCHAR},
+      </if>
+      <if test="hasRead != null">
+        #{hasRead,jdbcType=CHAR},
+      </if>
+      <if test="wrong != null">
+        #{wrong,jdbcType=VARCHAR},
+      </if>
+      <if test="titleNo != null">
+        #{titleNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mfile != null">
+        #{mfile,jdbcType=BLOB},
+      </if>
+      <if test="uf_004761 != null">
+        #{uf_004761,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004742 != null">
+        #{uf_004742,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004746 != null">
+        #{uf_004746,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004744 != null">
+        #{UF_004744,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004743 != null">
+        #{UF_004743,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004763 != null">
+        #{uf_004763,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004762 != null">
+        #{uf_004762,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004764 != null">
+        #{uf_004764,jdbcType=VARCHAR},
+      </if>
+      <if test="postalcode != null">
+        #{postalcode,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004757 != null">
+        #{uf_004757,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004785 != null">
+        #{uf_004785,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004784 != null">
+        #{uf_004784,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004786 != null">
+        #{uf_004786,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004791 != null">
+        #{uf_004791,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004778 != null">
+        #{uf_004778,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004780 != null">
+        #{uf_004780,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004790 != null">
+        #{uf_004790,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004779 != null">
+        #{uf_004779,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004798 != null">
+        #{uf_004798,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004758 != null">
+        #{uf_004758,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004787 != null">
+        #{uf_004787,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004759 != null">
+        #{uf_004759,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004788 != null">
+        #{uf_004788,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004774 != null">
+        #{uf_004774,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004789 != null">
+        #{UF_004789,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004794 != null">
+        #{uf_004794,jdbcType=VARCHAR},
+      </if>
+	  <if test="uf_004795 != null">
+        #{uf_004795,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004760 != null">
+        #{uf_004760,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004773 != null">
+        #{uf_004773,jdbcType=VARCHAR},
+      </if>
+      <if test="uf_004782 != null">
+        #{uf_004782,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

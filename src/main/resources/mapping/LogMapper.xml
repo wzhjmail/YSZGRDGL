@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.LogMapper">
+  <resultMap id="BaseResultMap" type="com.wzj.pojo.Log">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="time" jdbcType="DATE" property="time" />
+    <result column="person" jdbcType="VARCHAR" property="person" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="operation" jdbcType="VARCHAR" property="operation" />
+    <result column="operationType" jdbcType="VARCHAR" property="operationType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, time,person,department,operation,operationType
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <insert id="insertSelective" parameterType="com.wzj.pojo.Log">
+    insert into log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="person != null">
+        person,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="operation != null">
+        operation,
+      </if>
+      <if test="operationType != null">
+        operationType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=DATE},
+      </if>
+      <if test="person != null">
+        #{person,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null">
+        #{operationType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wzj.pojo.Log">
+    update log
+    <set>
+      <if test="time != null">
+        time = #{time,jdbcType=DATE},
+      </if>
+      <if test="person != null">
+        person = #{person,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        operation = #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null">
+        operationType = #{operationType,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wzj.pojo.Log">
+    update log
+    set time = #{time,jdbcType=VARCHAR},
+      person = #{person,jdbcType=VARCHAR},
+      department = #{department,jdbcType=VARCHAR},
+      operation = #{operation,jdbcType=VARCHAR},
+      operationType = #{operationType,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

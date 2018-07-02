@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.PbtSampleItemMapper">
+	
+	<delete id="delete" parameterType="java.lang.String">
+    	delete from pbt_sample_item
+    	where F_SAMPLE_KEY = #{f_sample_key,jdbcType=VARCHAR}
+  	</delete>
+	
+	<insert id="insert" parameterType="com.wzj.pojo.PbtSampleItem">
+    	insert into pbt_sample_item
+   		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="f_adate               !=null">f_adate,</if>
+			<if test="f_add_control         !=null">f_add_control,</if>
+			<if test="f_aperson             !=null">f_aperson,</if>
+			<if test="f_appoint_again       !=null">f_appoint_again,</if>
+			<if test="f_appoint_lab	        !=null">f_appoint_lab,</if>  
+			<if test="f_appoint_person      !=null">f_appoint_person,</if>
+			<if test="f_appoint_rose        !=null">f_appoint_rose,</if>
+			<if test="f_area                !=null">f_area,</if>
+			<if test="f_audit_class         !=null">f_audit_class,</if>
+			<if test="f_auditing1_yqwcsj    !=null">f_auditing1_yqwcsj,</if>
+			<if test="f_auditing2_yqwcsj    !=null">f_auditing2_yqwcsj,</if>
+			<if test="f_auditing3_yqwcsj    !=null">f_auditing3_yqwcsj,</if>
+			<if test="f_auditing4_yqwcsj    !=null">f_auditing4_yqwcsj,</if>
+			<if test="f_auditing_date       !=null">f_auditing_date,</if>
+			<if test="f_auditing_date1      !=null">f_auditing_date1,</if>
+			<if test="f_auditing_date2      !=null">f_auditing_date2,</if>
+			<if test="f_auditing_date3      !=null">f_auditing_date3,</if>
+			<if test="f_auditing_date4      !=null">f_auditing_date4,</if>
+			<if test="f_auditing_person     !=null">f_auditing_person,</if>
+			<if test="f_auditing_person1    !=null">f_auditing_person1    ,</if>
+			<if test="f_auditing_person2    !=null">f_auditing_person2    ,</if>
+			<if test="f_auditing_person3    !=null">f_auditing_person3    ,</if>
+			<if test="f_auditing_person4    !=null">f_auditing_person4    ,</if>
+			<if test="f_auto_report         !=null">f_auto_report         ,</if>
+			<if test="f_avalue              !=null">f_avalue              ,</if>
+			<if test="f_bvalue              !=null">f_bvalue              ,</if>
+			<if test="f_batch_code	        !=null">f_batch_code	      ,</if>  
+			<if test="f_batch_jmcode        !=null">f_batch_jmcode        ,</if>
+			<if test="f_batch_value         !=null">f_batch_value         ,</if>
+			<if test="f_cell_code           !=null">f_cell_code           ,</if>
+			<if test="f_change_date         !=null">f_change_date         ,</if>
+			<if test="f_change_stand        !=null">f_change_stand        ,</if>
+			<if test="f_change_stand_person !=null">f_change_stand_person ,</if>
+			<if test="f_client_add          !=null">f_client_add          ,</if>
+			<if test="f_code                !=null">f_code                ,</if>
+			<if test="f_compute_date	    !=null">f_compute_date	      ,</if>  
+			<if test="f_control_gx          !=null">f_control_gx          ,</if>
+			<if test="f_date                !=null">f_date                ,</if>
+			<if test="f_density             !=null">f_density             ,</if>
+			<if test="f_dept_completed      !=null">f_dept_completed      ,</if>
+			<if test="f_dept_overdate       !=null">f_dept_overdate       ,</if>
+			<if test="f_dept_true_date      !=null">f_dept_true_date      ,</if>
+			<if test="f_dept_itemcount      !=null">f_dept_itemcount      ,</if>
+			<if test="f_dept_rowtag         !=null">f_dept_rowtag         ,</if>
+			<if test="f_dis_audit1_name     !=null">f_dis_audit1_name     ,</if>
+			<if test="f_dis_audit1_person   !=null">f_dis_audit1_person   ,</if>
+			<if test="f_dis_audit2_name     !=null">f_dis_audit2_name     ,</if>
+			<if test="f_dis_audit2_person   !=null">f_dis_audit2_person   ,</if>
+			<if test="f_dis_audit3_name     !=null">f_dis_audit3_name     ,</if>
+			<if test="f_dis_audit3_person   !=null">f_dis_audit3_person   ,</if>
+			<if test="f_dis_audit4_name     !=null">f_dis_audit4_name     ,</if>
+			<if test="f_dis_audit4_person   !=null">f_dis_audit4_person   ,</if>
+			<if test="f_dis_report_date     !=null">f_dis_report_date     ,</if>
+			<if test="f_dis_report_name     !=null">f_dis_report_name     ,</if>
+			<if test="f_dis_report_person   !=null">f_dis_report_person   ,</if>
+			<if test="f_distribute_date     !=null">f_distribute_date     ,</if>
+			<if test="f_distribute_person   !=null">f_distribute_person   ,</if>
+			<if test="f_distribute_yqwcsj   !=null">f_distribute_yqwcsj   ,</if>
+			<if test="f_dis_item_id         !=null">f_dis_item_id         ,</if>
+			<if test="f_encrypt             !=null">f_encrypt             ,</if>
+			<if test="f_encrypt_code        !=null">f_encrypt_code        ,</if>
+			<if test="f_end_becase	        !=null">f_end_becase	      ,</if>  
+			<if test="f_end_code            !=null">f_end_code            ,</if>
+			<if test="f_end_date            !=null">f_end_date            ,</if>
+			<if test="f_end_person	        !=null">f_end_person	      ,</if>  
+			<if test="f_end_state           !=null">f_end_state           ,</if>
+			<if test="f_error_count         !=null">f_error_count         ,</if>
+			<if test="f_exp_tag             !=null">f_exp_tag             ,</if>
+			<if test="f_explain_by	        !=null">f_explain_by	      ,</if>  
+			<if test="f_fayang_date	        !=null">f_fayang_date	      ,</if>  
+			<if test="f_fenbao_tag	        !=null">f_fenbao_tag	      ,</if>  
+			<if test="f_finally_state       !=null">f_finally_state       ,</if>
+			<if test="f_first_code          !=null">f_first_code          ,</if>
+			<if test="f_fy_re_date	        !=null">f_fy_re_date	      ,</if>  
+			<if test="f_hand_just           !=null">f_hand_just           ,</if>
+			<if test="f_ifselect            !=null">f_ifselect            ,</if>
+			<if test="f_item_code           !=null">f_item_code           ,</if>
+			<if test="f_item_completed      !=null">f_item_completed      ,</if>
+			<if test="f_item_explain	    !=null">f_item_explain	      ,</if>
+			<if test="f_item_fj             !=null">f_item_fj             ,</if>
+			<if test="f_item_no             !=null">f_item_no             ,</if>
+			<if test="f_item_overdate       !=null">f_item_overdate       ,</if>
+			<if test="f_item_state	        !=null">f_item_state	      ,</if>  
+			<if test="f_item_template       !=null">f_item_template       ,</if>
+			<if test="f_item_true_date      !=null">f_item_true_date      ,</if>
+			<if test="f_item_type           !=null">f_item_type           ,</if>
+			<if test="f_item_workflow       !=null">f_item_workflow       ,</if>
+			<if test="f_item_zf_stand       !=null">f_item_zf_stand       ,</if>
+			<if test="f_item_zf_tag	        !=null">f_item_zf_tag	      ,</if>  
+			<if test="f_init_grade          !=null">f_init_grade          ,</if>
+			<if test="f_jbgxitemdate        !=null">f_jbgxitemdate        ,</if>
+			<if test="f_jbgxitemvalue       !=null">f_jbgxitemvalue       ,</if>
+			<if test="f_jbgxitemperson      !=null">f_jbgxitemperson      ,</if>
+			<if test="f_jq_state            !=null">f_jq_state            ,</if>
+			<if test="f_lab                 !=null">f_lab                 ,</if>
+			<if test="f_lab_date            !=null">f_lab_date            ,</if>
+			<if test="f_lab_name            !=null">f_lab_name            ,</if>
+			<if test="f_lab_person	        !=null">f_lab_person	      ,</if>  
+			<if test="f_last_state          !=null">f_last_state          ,</if>
+			<if test="f_lb_yqwcsj           !=null">f_lb_yqwcsj           ,</if>
+			<if test="f_level1              !=null">f_level1              ,</if>
+			<if test="f_level2              !=null">f_level2              ,</if>
+			<if test="f_level3              !=null">f_level3              ,</if>
+			<if test="f_level4              !=null">f_level4              ,</if>
+			<if test="f_lib_by_stand	    !=null">f_lib_by_stand	      ,</if>
+			<if test="f_lib_bz              !=null">f_lib_bz              ,</if>
+			<if test="f_lib_other           !=null">f_lib_other           ,</if>
+			<if test="f_lib_unique          !=null">f_lib_unique          ,</if>
+			<if test="f_lib_updown_value    !=null">f_lib_updown_value    ,</if>
+			<if test="f_lower_limit	        !=null">f_lower_limit	      ,</if>  
+			<if test="f_method_alais        !=null">f_method_alais        ,</if>
+			<if test="f_method_auditing     !=null">f_method_auditing     ,</if>
+			<if test="f_method_auditing_date!=null">f_method_auditing_date,</if>
+			<if test="f_method_code	        !=null">f_method_code	      ,</if>  
+			<if test="f_method_date	        !=null">f_method_date	      ,</if>  
+			<if test="f_method_person       !=null">f_method_person       ,</if>
+			<if test="f_modify_type	        !=null">f_modify_type	      ,</if>  
+			<if test="f_modify_value	    !=null">f_modify_value	      ,</if>
+			<if test="f_name_code           !=null">f_name_code           ,</if>
+			<if test="f_note_bill           !=null">f_note_bill           ,</if>
+			<if test="f_note_email	        !=null">f_note_email	      ,</if>  
+			<if test="f_note_key            !=null">f_note_key            ,</if>
+			<if test="f_note_person         !=null">f_note_person         ,</if>
+			<if test="f_note_date           !=null">f_note_date           ,</if>
+			<if test="f_operation_audit1    !=null">f_operation_audit1    ,</if>
+			<if test="f_operation_auditend  !=null">f_operation_auditend  ,</if>
+			<if test="f_operation_code      !=null">f_operation_code      ,</if>
+			<if test="f_operation_dept      !=null">f_operation_dept      ,</if>
+			<if test="f_operation_key       !=null">f_operation_key       ,</if>
+			<if test="f_operation_person    !=null">f_operation_person    ,</if>
+			<if test="f_operation_state     !=null">f_operation_state     ,</if>
+			<if test="f_pda_change          !=null">f_pda_change          ,</if>
+			<if test="f_pda_person	        !=null">f_pda_person	      ,</if>  
+			<if test="f_pda_select	        !=null">f_pda_select	      ,</if>  
+			<if test="f_pda_value           !=null">f_pda_value           ,</if>
+			<if test="f_person              !=null">f_person              ,</if>
+			<if test="f_person2_distribute  !=null">f_person2_distribute  ,</if>
+			<if test="f_person2_name	    !=null">f_person2_name	      ,</if>
+			<if test="f_person_distribute   !=null">f_person_distribute   ,</if>
+			<if test="f_person_name	        !=null">f_person_name	      ,</if>  
+			<if test="f_plan_code           !=null">f_plan_code           ,</if>
+			<if test="f_pp_bill             !=null">f_pp_bill             ,</if>
+			<if test="f_ppbill_state        !=null">f_ppbill_state        ,</if>
+			<if test="f_price               !=null">f_price               ,</if>
+			<if test="f_price_agio          !=null">f_price_agio          ,</if>
+			<if test="f_produce_stand       !=null">f_produce_stand       ,</if>
+			<if test="f_ready_a             !=null">f_ready_a             ,</if>
+			<if test="f_ready_b             !=null">f_ready_b             ,</if>
+			<if test="f_ready_c             !=null">f_ready_c             ,</if>
+			<if test="f_ready_x             !=null">f_ready_x             ,</if>
+			<if test="f_ready_y             !=null">f_ready_y             ,</if>
+			<if test="f_ready_z             !=null">f_ready_z             ,</if>
+			<if test="f_rectify_state       !=null">f_rectify_state       ,</if>
+			<if test="f_rectify_tag         !=null">f_rectify_tag         ,</if>
+			<if test="f_report_adate        !=null">f_report_adate        ,</if>
+			<if test="f_report_aperson      !=null">f_report_aperson      ,</if>
+			<if test="f_report_code	        !=null">f_report_code	      ,</if>  
+			<if test="f_report_date	        !=null">f_report_date	      ,</if>  
+			<if test="f_report_person       !=null">f_report_person       ,</if>
+			<if test="f_report_state        !=null">f_report_state        ,</if>
+			<if test="f_return_unit         !=null">f_return_unit         ,</if>
+			<if test="f_sample_code	        !=null">f_sample_code	      ,</if>  
+			<if test="f_sample_key          !=null">f_sample_key          ,</if>
+			<if test="f_sample_item_key     !=null">f_sample_item_key     ,</if>
+			<if test="f_sample_state        !=null">f_sample_state        ,</if>
+			<if test="f_save_bit            !=null">f_save_bit            ,</if>
+			<if test="f_save_state          !=null">f_save_state          ,</if>
+			<if test="f_second              !=null">f_second              ,</if>
+			<if test="f_second_code         !=null">f_second_code         ,</if>
+			<if test="f_second_date	        !=null">f_second_date	      ,</if>  
+			<if test="f_second_person       !=null">f_second_person       ,</if>
+			<if test="f_set_item            !=null">f_set_item            ,</if>
+			<if test="f_sh_accept           !=null">f_sh_accept           ,</if>
+			<if test="f_sh_accdate          !=null">f_sh_accdate          ,</if>
+			<if test="f_sh_accepttag        !=null">f_sh_accepttag        ,</if>
+			<if test="f_sh_jbgxitem         !=null">f_sh_jbgxitem         ,</if>
+			<if test="f_sort_no             !=null">f_sort_no             ,</if>
+			<if test="f_spot_code           !=null">f_spot_code           ,</if>
+			<if test="f_spot_group          !=null">f_spot_group          ,</if>
+			<if test="f_testlib_out         !=null">f_testlib_out         ,</if>
+			<if test="f_temp_tag            !=null">f_temp_tag            ,</if>
+			<if test="f_template_acode      !=null">f_template_acode      ,</if>
+			<if test="f_template_bcode      !=null">f_template_bcode      ,</if>
+			<if test="f_template_code       !=null">f_template_code       ,</if>
+			<if test="f_test_admin          !=null">f_test_admin          ,</if>
+			<if test="f_test_admindate      !=null">f_test_admindate      ,</if>
+			<if test="f_test_context	    !=null">f_test_context	      ,</if>
+			<if test="f_testitem            !=null">f_testitem            ,</if>
+			<if test="f_tree_code           !=null">f_tree_code           ,</if>
+			<if test="f_unit                !=null">f_unit                ,</if>
+			<if test="f_untread_count       !=null">f_untread_count       ,</if>
+			<if test="f_untread_person      !=null">f_untread_person      ,</if>
+			<if test="f_untread_date        !=null">f_untread_date        ,</if>
+			<if test="f_unusual_state       !=null">f_unusual_state       ,</if>
+			<if test="f_upper_limit	        !=null">f_upper_limit	      ,</if>  
+			<if test="f_user_method	        !=null">f_user_method	      ,</if>  
+			<if test="f_value               !=null">f_value               ,</if>
+			<if test="f_webtest_persons     !=null">f_webtest_persons     ,</if>
+			<if test="f_webtest_fzpersons   !=null">f_webtest_fzpersons   ,</if>
+			<if test="f_workdate            !=null">f_workdate            ,</if>
+			<if test="f_workflow_code       !=null">f_workflow_code       ,</if>
+			<if test="f_workprice           !=null">f_workprice           ,</if>
+			<if test="f_workscode           !=null">f_workscode           ,</if>
+			<if test="f_yqwcsj_itemstr      !=null">f_yqwcsj_itemstr      ,</if>
+			<if test="f_zf_code             !=null">f_zf_code             ,</if>
+			<if test="uf_0047130            !=null">uf_0047130            ,</if>
+			<if test="uf_0047131            !=null">uf_0047131            ,</if>
+			<if test="uf_0047132            !=null">uf_0047132            ,</if>
+			<if test="uf_0047133            !=null">uf_0047133            ,</if>
+			<if test="uf_0047134            !=null">uf_0047134            ,</if>
+			<if test="uf_0047135            !=null">uf_0047135            ,</if>
+			<if test="uf_0047136            !=null">uf_0047136            ,</if>
+			<if test="uf_0047137            !=null">uf_0047137            ,</if>
+			<if test="uf_0047138            !=null">uf_0047138            ,</if>
+			<if test="uf_0047139            !=null">uf_0047139            ,</if>
+			<if test="uf_0047140            !=null">uf_0047140            ,</if>
+			<if test="uf_0047141            !=null">uf_0047141            ,</if>
+			<if test="uf_00474              !=null">uf_00474              ,</if>
+			<if test="uf_004743             !=null">uf_004743             ,</if>
+			<if test="uf_00475              !=null">uf_00475              ,</if>
+			<if test="uf_00476              !=null">uf_00476              ,</if>
+			<if test="uf_004770             !=null">uf_004770             ,</if>
+			<if test="uf_004771             !=null">uf_004771             ,</if>
+			<if test="uf_004783             !=null">uf_004783             ,</if>
+			<if test="uf_10001              !=null">uf_10001              ,</if>
+		</trim>
+    	<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="f_adate               !=null">#{f_adate               ,jdbcType=DATE},</if>
+			<if test="f_add_control         !=null">#{f_add_control         ,jdbcType=VARCHAR},</if>
+			<if test="f_aperson             !=null">#{f_aperson             ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_again       !=null">#{f_appoint_again       ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_lab	        !=null">#{f_appoint_lab	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_appoint_person      !=null">#{f_appoint_person      ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_rose        !=null">#{f_appoint_rose        ,jdbcType=VARCHAR},</if>
+			<if test="f_area                !=null">#{f_area                ,jdbcType=VARCHAR},</if>
+			<if test="f_audit_class         !=null">#{f_audit_class         ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing1_yqwcsj    !=null">#{f_auditing1_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing2_yqwcsj    !=null">#{f_auditing2_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing3_yqwcsj    !=null">#{f_auditing3_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing4_yqwcsj    !=null">#{f_auditing4_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing_date       !=null">#{f_auditing_date       ,jdbcType=DATE},</if>
+			<if test="f_auditing_date1      !=null">#{f_auditing_date1      ,jdbcType=DATE},</if>
+			<if test="f_auditing_date2      !=null">#{f_auditing_date2      ,jdbcType=DATE},</if>
+			<if test="f_auditing_date3      !=null">#{f_auditing_date3      ,jdbcType=DATE},</if>
+			<if test="f_auditing_date4      !=null">#{f_auditing_date4      ,jdbcType=DATE},</if>
+			<if test="f_auditing_person     !=null">#{f_auditing_person     ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person1    !=null">#{f_auditing_person1    ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person2    !=null">#{f_auditing_person2    ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person3    !=null">#{f_auditing_person3    ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person4    !=null">#{f_auditing_person4    ,jdbcType=VARCHAR},</if>
+			<if test="f_auto_report         !=null">#{f_auto_report         ,jdbcType=VARCHAR},</if>
+			<if test="f_avalue              !=null">#{f_avalue              ,jdbcType=VARCHAR},</if>
+			<if test="f_bvalue              !=null">#{f_bvalue              ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_code	        !=null">#{f_batch_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_batch_jmcode        !=null">#{f_batch_jmcode        ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_value         !=null">#{f_batch_value         ,jdbcType=VARCHAR},</if>
+			<if test="f_cell_code           !=null">#{f_cell_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_change_date         !=null">#{f_change_date         ,jdbcType=DATE},</if>
+			<if test="f_change_stand        !=null">#{f_change_stand        ,jdbcType=VARCHAR},</if>
+			<if test="f_change_stand_person !=null">#{f_change_stand_person ,jdbcType=VARCHAR},</if>
+			<if test="f_client_add          !=null">#{f_client_add          ,jdbcType=VARCHAR},</if>
+			<if test="f_code                !=null">#{f_code                ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_date	    !=null">#{f_compute_date	    ,jdbcType=VARCHAR},</if>  
+			<if test="f_control_gx          !=null">#{f_control_gx          ,jdbcType=VARCHAR},</if>
+			<if test="f_date                !=null">#{f_date                ,jdbcType=DATE},</if>
+			<if test="f_density             !=null">#{f_density             ,jdbcType=VARCHAR},</if>
+			<if test="f_dept_completed      !=null">#{f_dept_completed      ,jdbcType=VARCHAR},</if>
+			<if test="f_dept_overdate       !=null">#{f_dept_overdate       ,jdbcType=VARCHAR},</if>
+			<if test="f_dept_true_date      !=null">#{f_dept_true_date      ,jdbcType=DATE},</if>
+			<if test="f_dept_itemcount      !=null">#{f_dept_itemcount      ,jdbcType=DATE},</if>
+			<if test="f_dept_rowtag         !=null">#{f_dept_rowtag         ,jdbcType=DATE},</if>
+			<if test="f_dis_audit1_name     !=null">#{f_dis_audit1_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit1_person   !=null">#{f_dis_audit1_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit2_name     !=null">#{f_dis_audit2_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit2_person   !=null">#{f_dis_audit2_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit3_name     !=null">#{f_dis_audit3_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit3_person   !=null">#{f_dis_audit3_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit4_name     !=null">#{f_dis_audit4_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit4_person   !=null">#{f_dis_audit4_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_report_date     !=null">#{f_dis_report_date     ,jdbcType=DATE},</if>
+			<if test="f_dis_report_name     !=null">#{f_dis_report_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_report_person   !=null">#{f_dis_report_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_distribute_date     !=null">#{f_distribute_date     ,jdbcType=DATE},</if>
+			<if test="f_distribute_person   !=null">#{f_distribute_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_distribute_yqwcsj   !=null">#{f_distribute_yqwcsj   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_item_id         !=null">#{f_dis_item_id         ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt             !=null">#{f_encrypt             ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_code        !=null">#{f_encrypt_code        ,jdbcType=VARCHAR},</if>
+			<if test="f_end_becase	        !=null">#{f_end_becase	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_end_code            !=null">#{f_end_code            ,jdbcType=VARCHAR},</if>
+			<if test="f_end_date            !=null">#{f_end_date            ,jdbcType=DATE},</if>
+			<if test="f_end_person	        !=null">#{f_end_person	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_end_state           !=null">#{f_end_state           ,jdbcType=VARCHAR},</if>
+			<if test="f_error_count         !=null">#{f_error_count         ,jdbcType=VARCHAR},</if>
+			<if test="f_exp_tag             !=null">#{f_exp_tag             ,jdbcType=VARCHAR},</if>
+			<if test="f_explain_by	        !=null">#{f_explain_by	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_fayang_date	        !=null">#{f_fayang_date	     	,jdbcType=DATE},</if>  
+			<if test="f_fenbao_tag	        !=null">#{f_fenbao_tag	     	,jdbcType=VARCHAR},</if>  
+			<if test="f_finally_state       !=null">#{f_finally_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_first_code          !=null">#{f_first_code          ,jdbcType=VARCHAR},</if>
+			<if test="f_fy_re_date	        !=null">#{f_fy_re_date	      	,jdbcType=DATE},</if>  
+			<if test="f_hand_just           !=null">#{f_hand_just           ,jdbcType=VARCHAR},</if>
+			<if test="f_ifselect            !=null">#{f_ifselect            ,jdbcType=VARCHAR},</if>
+			<if test="f_item_code           !=null">#{f_item_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_item_completed      !=null">#{f_item_completed      ,jdbcType=VARCHAR},</if>
+			<if test="f_item_explain	    !=null">#{f_item_explain	    ,jdbcType=VARCHAR},</if>
+			<if test="f_item_fj             !=null">#{f_item_fj             ,jdbcType=VARCHAR},</if>
+			<if test="f_item_no             !=null">#{f_item_no             ,jdbcType=INTEGER},</if>
+			<if test="f_item_overdate       !=null">#{f_item_overdate       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_state	        !=null">#{f_item_state	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_item_template       !=null">#{f_item_template       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_true_date      !=null">#{f_item_true_date      ,jdbcType=DATE},</if>
+			<if test="f_item_type           !=null">#{f_item_type           ,jdbcType=VARCHAR},</if>
+			<if test="f_item_workflow       !=null">#{f_item_workflow       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_zf_stand       !=null">#{f_item_zf_stand       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_zf_tag	        !=null">#{f_item_zf_tag	      	,jdbcType=INTEGER},</if>  
+			<if test="f_init_grade          !=null">#{f_init_grade          ,jdbcType=VARCHAR},</if>
+			<if test="f_jbgxitemdate        !=null">#{f_jbgxitemdate        ,jdbcType=DATE},</if>
+			<if test="f_jbgxitemvalue       !=null">#{f_jbgxitemvalue       ,jdbcType=VARCHAR},</if>
+			<if test="f_jbgxitemperson      !=null">#{f_jbgxitemperson      ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_state            !=null">#{f_jq_state            ,jdbcType=VARCHAR},</if>
+			<if test="f_lab                 !=null">#{f_lab                 ,jdbcType=VARCHAR},</if>
+			<if test="f_lab_date            !=null">#{f_lab_date            ,jdbcType=DATE},</if>
+			<if test="f_lab_name            !=null">#{f_lab_name            ,jdbcType=VARCHAR},</if>
+			<if test="f_lab_person	        !=null">#{f_lab_person	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_last_state          !=null">#{f_last_state          ,jdbcType=VARCHAR},</if>
+			<if test="f_lb_yqwcsj           !=null">#{f_lb_yqwcsj           ,jdbcType=VARCHAR},</if>
+			<if test="f_level1              !=null">#{f_level1              ,jdbcType=VARCHAR},</if>
+			<if test="f_level2              !=null">#{f_level2              ,jdbcType=VARCHAR},</if>
+			<if test="f_level3              !=null">#{f_level3              ,jdbcType=VARCHAR},</if>
+			<if test="f_level4              !=null">#{f_level4              ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_by_stand	    !=null">#{f_lib_by_stand	    ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_bz              !=null">#{f_lib_bz              ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_other           !=null">#{f_lib_other           ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_unique          !=null">#{f_lib_unique          ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_updown_value    !=null">#{f_lib_updown_value    ,jdbcType=VARCHAR},</if>
+			<if test="f_lower_limit	        !=null">#{f_lower_limit	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_method_alais        !=null">#{f_method_alais        ,jdbcType=VARCHAR},</if>
+			<if test="f_method_auditing     !=null">#{f_method_auditing     ,jdbcType=VARCHAR},</if>
+			<if test="f_method_auditing_date!=null">#{f_method_auditing_date,jdbcType=DATE},</if>
+			<if test="f_method_code	        !=null">#{f_method_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_method_date	        !=null">#{f_method_date	      	,jdbcType=DATE},</if>  
+			<if test="f_method_person       !=null">#{f_method_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_modify_type	        !=null">#{f_modify_type	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_modify_value	    !=null">#{f_modify_value	    ,jdbcType=VARCHAR},</if>
+			<if test="f_name_code           !=null">#{f_name_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_note_bill           !=null">#{f_note_bill           ,jdbcType=VARCHAR},</if>
+			<if test="f_note_email	        !=null">#{f_note_email	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_note_key            !=null">#{f_note_key            ,jdbcType=VARCHAR},</if>
+			<if test="f_note_person         !=null">#{f_note_person         ,jdbcType=VARCHAR},</if>
+			<if test="f_note_date           !=null">#{f_note_date           ,jdbcType=DATE},</if>
+			<if test="f_operation_audit1    !=null">#{f_operation_audit1    ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_auditend  !=null">#{f_operation_auditend  ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_code      !=null">#{f_operation_code      ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_dept      !=null">#{f_operation_dept      ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_key       !=null">#{f_operation_key       ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_person    !=null">#{f_operation_person    ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_state     !=null">#{f_operation_state     ,jdbcType=VARCHAR},</if>
+			<if test="f_pda_change          !=null">#{f_pda_change          ,jdbcType=VARCHAR},</if>
+			<if test="f_pda_person	        !=null">#{f_pda_person	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_pda_select	        !=null">#{f_pda_select	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_pda_value           !=null">#{f_pda_value           ,jdbcType=VARCHAR},</if>
+			<if test="f_person              !=null">#{f_person              ,jdbcType=VARCHAR},</if>
+			<if test="f_person2_distribute  !=null">#{f_person2_distribute  ,jdbcType=VARCHAR},</if>
+			<if test="f_person2_name	    !=null">#{f_person2_name	    ,jdbcType=VARCHAR},</if>
+			<if test="f_person_distribute   !=null">#{f_person_distribute   ,jdbcType=VARCHAR},</if>
+			<if test="f_person_name	        !=null">#{f_person_name	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_plan_code           !=null">#{f_plan_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_bill             !=null">#{f_pp_bill             ,jdbcType=VARCHAR},</if>
+			<if test="f_ppbill_state        !=null">#{f_ppbill_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_price               !=null">#{f_price               ,jdbcType=VARCHAR},</if>
+			<if test="f_price_agio          !=null">#{f_price_agio          ,jdbcType=VARCHAR},</if>
+			<if test="f_produce_stand       !=null">#{f_produce_stand       ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_a             !=null">#{f_ready_a             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_b             !=null">#{f_ready_b             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_c             !=null">#{f_ready_c             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_x             !=null">#{f_ready_x             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_y             !=null">#{f_ready_y             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_z             !=null">#{f_ready_z             ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_state       !=null">#{f_rectify_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_tag         !=null">#{f_rectify_tag         ,jdbcType=VARCHAR},</if>
+			<if test="f_report_adate        !=null">#{f_report_adate        ,jdbcType=DATE},</if>
+			<if test="f_report_aperson      !=null">#{f_report_aperson      ,jdbcType=VARCHAR},</if>
+			<if test="f_report_code	        !=null">#{f_report_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_report_date	        !=null">#{f_report_date	      	,jdbcType=DATE},</if>  
+			<if test="f_report_person       !=null">#{f_report_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_report_state        !=null">#{f_report_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_return_unit         !=null">#{f_return_unit         ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_code	        !=null">#{f_sample_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_sample_key          !=null">#{f_sample_key          ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_item_key     !=null">#{f_sample_item_key     ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_state        !=null">#{f_sample_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_save_bit            !=null">#{f_save_bit            ,jdbcType=VARCHAR},</if>
+			<if test="f_save_state          !=null">#{f_save_state          ,jdbcType=VARCHAR},</if>
+			<if test="f_second              !=null">#{f_second              ,jdbcType=VARCHAR},</if>
+			<if test="f_second_code         !=null">#{f_second_code         ,jdbcType=VARCHAR},</if>
+			<if test="f_second_date	        !=null">#{f_second_date	      	,jdbcType=DATE},</if>  
+			<if test="f_second_person       !=null">#{f_second_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_set_item            !=null">#{f_set_item            ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_accept           !=null">#{f_sh_accept           ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_accdate          !=null">#{f_sh_accdate          ,jdbcType=DATE},</if>
+			<if test="f_sh_accepttag        !=null">#{f_sh_accepttag        ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_jbgxitem         !=null">#{f_sh_jbgxitem         ,jdbcType=VARCHAR},</if>
+			<if test="f_sort_no             !=null">#{f_sort_no             ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_code           !=null">#{f_spot_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_group          !=null">#{f_spot_group          ,jdbcType=VARCHAR},</if>
+			<if test="f_testlib_out         !=null">#{f_testlib_out         ,jdbcType=VARCHAR},</if>
+			<if test="f_temp_tag            !=null">#{f_temp_tag            ,jdbcType=VARCHAR},</if>
+			<if test="f_template_acode      !=null">#{f_template_acode      ,jdbcType=VARCHAR},</if>
+			<if test="f_template_bcode      !=null">#{f_template_bcode      ,jdbcType=VARCHAR},</if>
+			<if test="f_template_code       !=null">#{f_template_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_test_admin          !=null">#{f_test_admin          ,jdbcType=VARCHAR},</if>
+			<if test="f_test_admindate      !=null">#{f_test_admindate      ,jdbcType=DATE},</if>
+			<if test="f_test_context	    !=null">#{f_test_context	    ,jdbcType=VARCHAR},</if>
+			<if test="f_testitem            !=null">#{f_testitem            ,jdbcType=VARCHAR},</if>
+			<if test="f_tree_code           !=null">#{f_tree_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_unit                !=null">#{f_unit                ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_count       !=null">#{f_untread_count       ,jdbcType=INTEGER},</if>
+			<if test="f_untread_person      !=null">#{f_untread_person      ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_date        !=null">#{f_untread_date        ,jdbcType=DATE},</if>
+			<if test="f_unusual_state       !=null">#{f_unusual_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_upper_limit	        !=null">#{f_upper_limit	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_user_method	        !=null">#{f_user_method	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_value               !=null">#{f_value               ,jdbcType=VARCHAR},</if>
+			<if test="f_webtest_persons     !=null">#{f_webtest_persons     ,jdbcType=VARCHAR},</if>
+			<if test="f_webtest_fzpersons   !=null">#{f_webtest_fzpersons   ,jdbcType=VARCHAR},</if>
+			<if test="f_workdate            !=null">#{f_workdate            ,jdbcType=VARCHAR},</if>
+			<if test="f_workflow_code       !=null">#{f_workflow_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_workprice           !=null">#{f_workprice           ,jdbcType=VARCHAR},</if>
+			<if test="f_workscode           !=null">#{f_workscode           ,jdbcType=VARCHAR},</if>
+			<if test="f_yqwcsj_itemstr      !=null">#{f_yqwcsj_itemstr      ,jdbcType=VARCHAR},</if>
+			<if test="f_zf_code             !=null">#{f_zf_code             ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047130            !=null">#{uf_0047130            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047131            !=null">#{uf_0047131            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047132            !=null">#{uf_0047132            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047133            !=null">#{uf_0047133            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047134            !=null">#{uf_0047134            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047135            !=null">#{uf_0047135            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047136            !=null">#{uf_0047136            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047137            !=null">#{uf_0047137            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047138            !=null">#{uf_0047138            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047139            !=null">#{uf_0047139            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047140            !=null">#{uf_0047140            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047141            !=null">#{uf_0047141            ,jdbcType=VARCHAR},</if>
+			<if test="uf_00474              !=null">#{uf_00474              ,jdbcType=DOUBLE},</if>
+			<if test="uf_004743             !=null">#{uf_004743             ,jdbcType=VARCHAR},</if>
+			<if test="uf_00475              !=null">#{uf_00475              ,jdbcType=VARCHAR},</if>
+			<if test="uf_00476              !=null">#{uf_00476              ,jdbcType=VARCHAR},</if>
+			<if test="uf_004770             !=null">#{uf_004770            	,jdbcType=VARCHAR},</if>
+			<if test="uf_004771             !=null">#{uf_004771            	,jdbcType=VARCHAR},</if>
+			<if test="uf_004783             !=null">#{uf_004783            	,jdbcType=VARCHAR},</if>
+			<if test="uf_10001              !=null">#{uf_10001             	,jdbcType=VARCHAR},</if>
+		</trim>
+  	</insert>
+  	
+	<update id="update" parameterType="com.wzj.pojo.PbtSampleItem">
+    	update pbt_sample_item
+    	<set>
+    		<if test="f_adate               !=null">f_adate               =#{f_adate               ,jdbcType=DATE},</if>
+			<if test="f_add_control         !=null">f_add_control         =#{f_add_control         ,jdbcType=VARCHAR},</if>
+			<if test="f_aperson             !=null">f_aperson             =#{f_aperson             ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_again       !=null">f_appoint_again       =#{f_appoint_again       ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_lab	        !=null">f_appoint_lab	      =#{f_appoint_lab	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_appoint_person      !=null">f_appoint_person      =#{f_appoint_person      ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_rose        !=null">f_appoint_rose        =#{f_appoint_rose        ,jdbcType=VARCHAR},</if>
+			<if test="f_area                !=null">f_area                =#{f_area                ,jdbcType=VARCHAR},</if>
+			<if test="f_audit_class         !=null">f_audit_class         =#{f_audit_class         ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing1_yqwcsj    !=null">f_auditing1_yqwcsj    =#{f_auditing1_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing2_yqwcsj    !=null">f_auditing2_yqwcsj    =#{f_auditing2_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing3_yqwcsj    !=null">f_auditing3_yqwcsj    =#{f_auditing3_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing4_yqwcsj    !=null">f_auditing4_yqwcsj    =#{f_auditing4_yqwcsj    ,jdbcType=DATE},</if>
+			<if test="f_auditing_date       !=null">f_auditing_date       =#{f_auditing_date       ,jdbcType=DATE},</if>
+			<if test="f_auditing_date1      !=null">f_auditing_date1      =#{f_auditing_date1      ,jdbcType=DATE},</if>
+			<if test="f_auditing_date2      !=null">f_auditing_date2      =#{f_auditing_date2      ,jdbcType=DATE},</if>
+			<if test="f_auditing_date3      !=null">f_auditing_date3      =#{f_auditing_date3      ,jdbcType=DATE},</if>
+			<if test="f_auditing_date4      !=null">f_auditing_date4      =#{f_auditing_date4      ,jdbcType=DATE},</if>
+			<if test="f_auditing_person     !=null">f_auditing_person     =#{f_auditing_person     ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person1    !=null">f_auditing_person1    =#{f_auditing_person1    ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person2    !=null">f_auditing_person2    =#{f_auditing_person2    ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person3    !=null">f_auditing_person3    =#{f_auditing_person3    ,jdbcType=VARCHAR},</if>
+			<if test="f_auditing_person4    !=null">f_auditing_person4    =#{f_auditing_person4    ,jdbcType=VARCHAR},</if>
+			<if test="f_auto_report         !=null">f_auto_report         =#{f_auto_report         ,jdbcType=VARCHAR},</if>
+			<if test="f_avalue              !=null">f_avalue              =#{f_avalue              ,jdbcType=VARCHAR},</if>
+			<if test="f_bvalue              !=null">f_bvalue              =#{f_bvalue              ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_code	        !=null">f_batch_code	      =#{f_batch_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_batch_jmcode        !=null">f_batch_jmcode        =#{f_batch_jmcode        ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_value         !=null">f_batch_value         =#{f_batch_value         ,jdbcType=VARCHAR},</if>
+			<if test="f_cell_code           !=null">f_cell_code           =#{f_cell_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_change_date         !=null">f_change_date         =#{f_change_date         ,jdbcType=DATE},</if>
+			<if test="f_change_stand        !=null">f_change_stand        =#{f_change_stand        ,jdbcType=VARCHAR},</if>
+			<if test="f_change_stand_person !=null">f_change_stand_person =#{f_change_stand_person ,jdbcType=VARCHAR},</if>
+			<if test="f_client_add          !=null">f_client_add          =#{f_client_add          ,jdbcType=VARCHAR},</if>
+			<if test="f_code                !=null">f_code                =#{f_code                ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_date	    !=null">f_compute_date	      =#{f_compute_date	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_control_gx          !=null">f_control_gx          =#{f_control_gx          ,jdbcType=VARCHAR},</if>
+			<if test="f_date                !=null">f_date                =#{f_date                ,jdbcType=DATE},</if>
+			<if test="f_density             !=null">f_density             =#{f_density             ,jdbcType=VARCHAR},</if>
+			<if test="f_dept_completed      !=null">f_dept_completed      =#{f_dept_completed      ,jdbcType=VARCHAR},</if>
+			<if test="f_dept_overdate       !=null">f_dept_overdate       =#{f_dept_overdate       ,jdbcType=VARCHAR},</if>
+			<if test="f_dept_true_date      !=null">f_dept_true_date      =#{f_dept_true_date      ,jdbcType=DATE},</if>
+			<if test="f_dept_itemcount      !=null">f_dept_itemcount      =#{f_dept_itemcount      ,jdbcType=DATE},</if>
+			<if test="f_dept_rowtag         !=null">f_dept_rowtag         =#{f_dept_rowtag         ,jdbcType=DATE},</if>
+			<if test="f_dis_audit1_name     !=null">f_dis_audit1_name     =#{f_dis_audit1_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit1_person   !=null">f_dis_audit1_person   =#{f_dis_audit1_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit2_name     !=null">f_dis_audit2_name     =#{f_dis_audit2_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit2_person   !=null">f_dis_audit2_person   =#{f_dis_audit2_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit3_name     !=null">f_dis_audit3_name     =#{f_dis_audit3_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit3_person   !=null">f_dis_audit3_person   =#{f_dis_audit3_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit4_name     !=null">f_dis_audit4_name     =#{f_dis_audit4_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_audit4_person   !=null">f_dis_audit4_person   =#{f_dis_audit4_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_report_date     !=null">f_dis_report_date     =#{f_dis_report_date     ,jdbcType=DATE},</if>
+			<if test="f_dis_report_name     !=null">f_dis_report_name     =#{f_dis_report_name     ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_report_person   !=null">f_dis_report_person   =#{f_dis_report_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_distribute_date     !=null">f_distribute_date     =#{f_distribute_date     ,jdbcType=DATE},</if>
+			<if test="f_distribute_person   !=null">f_distribute_person   =#{f_distribute_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_distribute_yqwcsj   !=null">f_distribute_yqwcsj   =#{f_distribute_yqwcsj   ,jdbcType=VARCHAR},</if>
+			<if test="f_dis_item_id         !=null">f_dis_item_id         =#{f_dis_item_id         ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt             !=null">f_encrypt             =#{f_encrypt             ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_code        !=null">f_encrypt_code        =#{f_encrypt_code        ,jdbcType=VARCHAR},</if>
+			<if test="f_end_becase	        !=null">f_end_becase	      =#{f_end_becase	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_end_code            !=null">f_end_code            =#{f_end_code            ,jdbcType=VARCHAR},</if>
+			<if test="f_end_date            !=null">f_end_date            =#{f_end_date            ,jdbcType=DATE},</if>
+			<if test="f_end_person	        !=null">f_end_person	      =#{f_end_person	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_end_state           !=null">f_end_state           =#{f_end_state           ,jdbcType=VARCHAR},</if>
+			<if test="f_error_count         !=null">f_error_count         =#{f_error_count         ,jdbcType=VARCHAR},</if>
+			<if test="f_exp_tag             !=null">f_exp_tag             =#{f_exp_tag             ,jdbcType=VARCHAR},</if>
+			<if test="f_explain_by	        !=null">f_explain_by	      =#{f_explain_by	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_fayang_date	        !=null">f_fayang_date	      =#{f_fayang_date	     	,jdbcType=DATE},</if>  
+			<if test="f_fenbao_tag	        !=null">f_fenbao_tag	      =#{f_fenbao_tag	     	,jdbcType=VARCHAR},</if>  
+			<if test="f_finally_state       !=null">f_finally_state       =#{f_finally_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_first_code          !=null">f_first_code          =#{f_first_code          ,jdbcType=VARCHAR},</if>
+			<if test="f_fy_re_date	        !=null">f_fy_re_date	      =#{f_fy_re_date	      	,jdbcType=DATE},</if>  
+			<if test="f_hand_just           !=null">f_hand_just           =#{f_hand_just           ,jdbcType=VARCHAR},</if>
+			<if test="f_ifselect            !=null">f_ifselect            =#{f_ifselect            ,jdbcType=VARCHAR},</if>
+			<if test="f_item_code           !=null">f_item_code           =#{f_item_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_item_completed      !=null">f_item_completed      =#{f_item_completed      ,jdbcType=VARCHAR},</if>
+			<if test="f_item_explain	    !=null">f_item_explain	      =#{f_item_explain	    ,jdbcType=VARCHAR},</if>
+			<if test="f_item_fj             !=null">f_item_fj             =#{f_item_fj             ,jdbcType=VARCHAR},</if>
+			<if test="f_item_no             !=null">f_item_no             =#{f_item_no             ,jdbcType=INTEGER},</if>
+			<if test="f_item_overdate       !=null">f_item_overdate       =#{f_item_overdate       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_state	        !=null">f_item_state	      =#{f_item_state	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_item_template       !=null">f_item_template       =#{f_item_template       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_true_date      !=null">f_item_true_date      =#{f_item_true_date      ,jdbcType=DATE},</if>
+			<if test="f_item_type           !=null">f_item_type           =#{f_item_type           ,jdbcType=VARCHAR},</if>
+			<if test="f_item_workflow       !=null">f_item_workflow       =#{f_item_workflow       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_zf_stand       !=null">f_item_zf_stand       =#{f_item_zf_stand       ,jdbcType=VARCHAR},</if>
+			<if test="f_item_zf_tag	        !=null">f_item_zf_tag	      =#{f_item_zf_tag	      	,jdbcType=INTEGER},</if>  
+			<if test="f_init_grade          !=null">f_init_grade          =#{f_init_grade          ,jdbcType=VARCHAR},</if>
+			<if test="f_jbgxitemdate        !=null">f_jbgxitemdate        =#{f_jbgxitemdate        ,jdbcType=DATE},</if>
+			<if test="f_jbgxitemvalue       !=null">f_jbgxitemvalue       =#{f_jbgxitemvalue       ,jdbcType=VARCHAR},</if>
+			<if test="f_jbgxitemperson      !=null">f_jbgxitemperson      =#{f_jbgxitemperson      ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_state            !=null">f_jq_state            =#{f_jq_state            ,jdbcType=VARCHAR},</if>
+			<if test="f_lab                 !=null">f_lab                 =#{f_lab                 ,jdbcType=VARCHAR},</if>
+			<if test="f_lab_date            !=null">f_lab_date            =#{f_lab_date            ,jdbcType=DATE},</if>
+			<if test="f_lab_name            !=null">f_lab_name            =#{f_lab_name            ,jdbcType=VARCHAR},</if>
+			<if test="f_lab_person	        !=null">f_lab_person	      =#{f_lab_person	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_last_state          !=null">f_last_state          =#{f_last_state          ,jdbcType=VARCHAR},</if>
+			<if test="f_lb_yqwcsj           !=null">f_lb_yqwcsj           =#{f_lb_yqwcsj           ,jdbcType=VARCHAR},</if>
+			<if test="f_level1              !=null">f_level1              =#{f_level1              ,jdbcType=VARCHAR},</if>
+			<if test="f_level2              !=null">f_level2              =#{f_level2              ,jdbcType=VARCHAR},</if>
+			<if test="f_level3              !=null">f_level3              =#{f_level3              ,jdbcType=VARCHAR},</if>
+			<if test="f_level4              !=null">f_level4              =#{f_level4              ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_by_stand	    !=null">f_lib_by_stand	      =#{f_lib_by_stand	    ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_bz              !=null">f_lib_bz              =#{f_lib_bz              ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_other           !=null">f_lib_other           =#{f_lib_other           ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_unique          !=null">f_lib_unique          =#{f_lib_unique          ,jdbcType=VARCHAR},</if>
+			<if test="f_lib_updown_value    !=null">f_lib_updown_value    =#{f_lib_updown_value    ,jdbcType=VARCHAR},</if>
+			<if test="f_lower_limit	        !=null">f_lower_limit	      =#{f_lower_limit	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_method_alais        !=null">f_method_alais        =#{f_method_alais        ,jdbcType=VARCHAR},</if>
+			<if test="f_method_auditing     !=null">f_method_auditing     =#{f_method_auditing     ,jdbcType=VARCHAR},</if>
+			<if test="f_method_auditing_date!=null">f_method_auditing_date=#{f_method_auditing_date,jdbcType=DATE},</if>
+			<if test="f_method_code	        !=null">f_method_code	      =#{f_method_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_method_date	        !=null">f_method_date	      =#{f_method_date	      	,jdbcType=DATE},</if>  
+			<if test="f_method_person       !=null">f_method_person       =#{f_method_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_modify_type	        !=null">f_modify_type	      =#{f_modify_type	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_modify_value	    !=null">f_modify_value	      =#{f_modify_value	    ,jdbcType=VARCHAR},</if>
+			<if test="f_name_code           !=null">f_name_code           =#{f_name_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_note_bill           !=null">f_note_bill           =#{f_note_bill           ,jdbcType=VARCHAR},</if>
+			<if test="f_note_email	        !=null">f_note_email	      =#{f_note_email	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_note_key            !=null">f_note_key            =#{f_note_key            ,jdbcType=VARCHAR},</if>
+			<if test="f_note_person         !=null">f_note_person         =#{f_note_person         ,jdbcType=VARCHAR},</if>
+			<if test="f_note_date           !=null">f_note_date           =#{f_note_date           ,jdbcType=DATE},</if>
+			<if test="f_operation_audit1    !=null">f_operation_audit1    =#{f_operation_audit1    ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_auditend  !=null">f_operation_auditend  =#{f_operation_auditend  ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_code      !=null">f_operation_code      =#{f_operation_code      ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_dept      !=null">f_operation_dept      =#{f_operation_dept      ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_key       !=null">f_operation_key       =#{f_operation_key       ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_person    !=null">f_operation_person    =#{f_operation_person    ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_state     !=null">f_operation_state     =#{f_operation_state     ,jdbcType=VARCHAR},</if>
+			<if test="f_pda_change          !=null">f_pda_change          =#{f_pda_change          ,jdbcType=VARCHAR},</if>
+			<if test="f_pda_person	        !=null">f_pda_person	      =#{f_pda_person	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_pda_select	        !=null">f_pda_select	      =#{f_pda_select	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_pda_value           !=null">f_pda_value           =#{f_pda_value           ,jdbcType=VARCHAR},</if>
+			<if test="f_person              !=null">f_person              =#{f_person              ,jdbcType=VARCHAR},</if>
+			<if test="f_person2_distribute  !=null">f_person2_distribute  =#{f_person2_distribute  ,jdbcType=VARCHAR},</if>
+			<if test="f_person2_name	    !=null">f_person2_name	      =#{f_person2_name	    ,jdbcType=VARCHAR},</if>
+			<if test="f_person_distribute   !=null">f_person_distribute   =#{f_person_distribute   ,jdbcType=VARCHAR},</if>
+			<if test="f_person_name	        !=null">f_person_name	      =#{f_person_name	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_plan_code           !=null">f_plan_code           =#{f_plan_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_bill             !=null">f_pp_bill             =#{f_pp_bill             ,jdbcType=VARCHAR},</if>
+			<if test="f_ppbill_state        !=null">f_ppbill_state        =#{f_ppbill_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_price               !=null">f_price               =#{f_price               ,jdbcType=VARCHAR},</if>
+			<if test="f_price_agio          !=null">f_price_agio          =#{f_price_agio          ,jdbcType=VARCHAR},</if>
+			<if test="f_produce_stand       !=null">f_produce_stand       =#{f_produce_stand       ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_a             !=null">f_ready_a             =#{f_ready_a             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_b             !=null">f_ready_b             =#{f_ready_b             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_c             !=null">f_ready_c             =#{f_ready_c             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_x             !=null">f_ready_x             =#{f_ready_x             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_y             !=null">f_ready_y             =#{f_ready_y             ,jdbcType=VARCHAR},</if>
+			<if test="f_ready_z             !=null">f_ready_z             =#{f_ready_z             ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_state       !=null">f_rectify_state       =#{f_rectify_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_tag         !=null">f_rectify_tag         =#{f_rectify_tag         ,jdbcType=VARCHAR},</if>
+			<if test="f_report_adate        !=null">f_report_adate        =#{f_report_adate        ,jdbcType=DATE},</if>
+			<if test="f_report_aperson      !=null">f_report_aperson      =#{f_report_aperson      ,jdbcType=VARCHAR},</if>
+			<if test="f_report_code	        !=null">f_report_code	      =#{f_report_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_report_date	        !=null">f_report_date	      =#{f_report_date	      	,jdbcType=DATE},</if>  
+			<if test="f_report_person       !=null">f_report_person       =#{f_report_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_report_state        !=null">f_report_state        =#{f_report_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_return_unit         !=null">f_return_unit         =#{f_return_unit         ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_code	        !=null">f_sample_code	      =#{f_sample_code	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_sample_key          !=null">f_sample_key          =#{f_sample_key          ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_item_key     !=null">f_sample_item_key     =#{f_sample_item_key     ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_state        !=null">f_sample_state        =#{f_sample_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_save_bit            !=null">f_save_bit            =#{f_save_bit            ,jdbcType=VARCHAR},</if>
+			<if test="f_save_state          !=null">f_save_state          =#{f_save_state          ,jdbcType=VARCHAR},</if>
+			<if test="f_second              !=null">f_second              =#{f_second              ,jdbcType=VARCHAR},</if>
+			<if test="f_second_code         !=null">f_second_code         =#{f_second_code         ,jdbcType=VARCHAR},</if>
+			<if test="f_second_date	        !=null">f_second_date	      =#{f_second_date	      	,jdbcType=DATE},</if>  
+			<if test="f_second_person       !=null">f_second_person       =#{f_second_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_set_item            !=null">f_set_item            =#{f_set_item            ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_accept           !=null">f_sh_accept           =#{f_sh_accept           ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_accdate          !=null">f_sh_accdate          =#{f_sh_accdate          ,jdbcType=DATE},</if>
+			<if test="f_sh_accepttag        !=null">f_sh_accepttag        =#{f_sh_accepttag        ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_jbgxitem         !=null">f_sh_jbgxitem         =#{f_sh_jbgxitem         ,jdbcType=VARCHAR},</if>
+			<if test="f_sort_no             !=null">f_sort_no             =#{f_sort_no             ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_code           !=null">f_spot_code           =#{f_spot_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_group          !=null">f_spot_group          =#{f_spot_group          ,jdbcType=VARCHAR},</if>
+			<if test="f_testlib_out         !=null">f_testlib_out         =#{f_testlib_out         ,jdbcType=VARCHAR},</if>
+			<if test="f_temp_tag            !=null">f_temp_tag            =#{f_temp_tag            ,jdbcType=VARCHAR},</if>
+			<if test="f_template_acode      !=null">f_template_acode      =#{f_template_acode      ,jdbcType=VARCHAR},</if>
+			<if test="f_template_bcode      !=null">f_template_bcode      =#{f_template_bcode      ,jdbcType=VARCHAR},</if>
+			<if test="f_template_code       !=null">f_template_code       =#{f_template_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_test_admin          !=null">f_test_admin          =#{f_test_admin          ,jdbcType=VARCHAR},</if>
+			<if test="f_test_admindate      !=null">f_test_admindate      =#{f_test_admindate      ,jdbcType=DATE},</if>
+			<if test="f_test_context	    !=null">f_test_context	      =#{f_test_context	    ,jdbcType=VARCHAR},</if>
+			<if test="f_testitem            !=null">f_testitem            =#{f_testitem            ,jdbcType=VARCHAR},</if>
+			<if test="f_tree_code           !=null">f_tree_code           =#{f_tree_code           ,jdbcType=VARCHAR},</if>
+			<if test="f_unit                !=null">f_unit                =#{f_unit                ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_count       !=null">f_untread_count       =#{f_untread_count       ,jdbcType=INTEGER},</if>
+			<if test="f_untread_person      !=null">f_untread_person      =#{f_untread_person      ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_date        !=null">f_untread_date        =#{f_untread_date        ,jdbcType=DATE},</if>
+			<if test="f_unusual_state       !=null">f_unusual_state       =#{f_unusual_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_upper_limit	        !=null">f_upper_limit	      =#{f_upper_limit	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_user_method	        !=null">f_user_method	      =#{f_user_method	      	,jdbcType=VARCHAR},</if>  
+			<if test="f_value               !=null">f_value               =#{f_value               ,jdbcType=VARCHAR},</if>
+			<if test="f_webtest_persons     !=null">f_webtest_persons     =#{f_webtest_persons     ,jdbcType=VARCHAR},</if>
+			<if test="f_webtest_fzpersons   !=null">f_webtest_fzpersons   =#{f_webtest_fzpersons   ,jdbcType=VARCHAR},</if>
+			<if test="f_workdate            !=null">f_workdate            =#{f_workdate            ,jdbcType=VARCHAR},</if>
+			<if test="f_workflow_code       !=null">f_workflow_code       =#{f_workflow_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_workprice           !=null">f_workprice           =#{f_workprice           ,jdbcType=VARCHAR},</if>
+			<if test="f_workscode           !=null">f_workscode           =#{f_workscode           ,jdbcType=VARCHAR},</if>
+			<if test="f_yqwcsj_itemstr      !=null">f_yqwcsj_itemstr      =#{f_yqwcsj_itemstr      ,jdbcType=VARCHAR},</if>
+			<if test="f_zf_code             !=null">f_zf_code             =#{f_zf_code             ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047130            !=null">uf_0047130            =#{uf_0047130            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047131            !=null">uf_0047131            =#{uf_0047131            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047132            !=null">uf_0047132            =#{uf_0047132            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047133            !=null">uf_0047133            =#{uf_0047133            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047134            !=null">uf_0047134            =#{uf_0047134            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047135            !=null">uf_0047135            =#{uf_0047135            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047136            !=null">uf_0047136            =#{uf_0047136            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047137            !=null">uf_0047137            =#{uf_0047137            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047138            !=null">uf_0047138            =#{uf_0047138            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047139            !=null">uf_0047139            =#{uf_0047139            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047140            !=null">uf_0047140            =#{uf_0047140            ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047141            !=null">uf_0047141            =#{uf_0047141            ,jdbcType=VARCHAR},</if>
+			<if test="uf_00474              !=null">uf_00474              =#{uf_00474              ,jdbcType=DOUBLE},</if>
+			<if test="uf_004743             !=null">uf_004743             =#{uf_004743             ,jdbcType=VARCHAR},</if>
+			<if test="uf_00475              !=null">uf_00475              =#{uf_00475              ,jdbcType=VARCHAR},</if>
+			<if test="uf_00476              !=null">uf_00476              =#{uf_00476              ,jdbcType=VARCHAR},</if>
+			<if test="uf_004770             !=null">uf_004770             =#{uf_004770            	,jdbcType=VARCHAR},</if>
+			<if test="uf_004771             !=null">uf_004771             =#{uf_004771            	,jdbcType=VARCHAR},</if>
+			<if test="uf_004783             !=null">uf_004783             =#{uf_004783            	,jdbcType=VARCHAR},</if>
+			<if test="uf_10001              !=null">uf_10001              =#{uf_10001             	,jdbcType=VARCHAR},</if>
+		</set>
+    	where F_SAMPLE_KEY = #{f_sample_key,jdbcType=VARCHAR}
+  	</update>
+</mapper>

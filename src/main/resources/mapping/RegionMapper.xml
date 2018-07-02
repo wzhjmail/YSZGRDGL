@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.RegionMapper">
+  <resultMap id="BaseResultMap" type="com.wzj.pojo.Region">
+      <result column="REGION_CODE" jdbcType="VARCHAR" property="regioncode" />
+      <result column="REGION_NAME" jdbcType="VARCHAR" property="regionname" />
+      <result column="PARENT_CODE" jdbcType="VARCHAR" property="parentcode" />
+      <result column="PROVINCE_CODE" jdbcType="VARCHAR" property="provincecode" />
+      <result column="CITY_CODE" jdbcType="VARCHAR" property="citycode" />
+      <result column="COUNTRY_CODE" jdbcType="VARCHAR" property="countrycode" />
+ 	  <result column="TOWN_CODE" jdbcType="VARCHAR" property="towncode"/>
+ 	  <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updatetime"/>
+ 	  <result column="ALL_REGION_NAME" jdbcType="LONGVARCHAR" property="allregionname"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    REGION_CODE, REGION_NAME, PARENT_CODE, PROVINCE_CODE,CITY_CODE, COUNTRY_CODE, TOWN_CODE,UPDATE_TIME,ALL_REGION_NAME
+  </sql>
+  <select id="getAllRegion" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_code_region
+  </select>
+  <select id="getAllRegionByList" resultMap="BaseResultMap">
+  	select * from sys_code_region where REGION_CODE in 
+  		<foreach item="item" index="index" collection="list"
+  		open="(" separator="," close=")">#{item}
+  		</foreach>
+  </select>
+</mapper>

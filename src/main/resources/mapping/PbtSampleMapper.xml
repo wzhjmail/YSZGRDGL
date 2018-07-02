@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.PbtSampleMapper">
+	
+	<delete id="delete" parameterType="java.lang.String">
+    	delete from PBT_SAMPLE
+    	where UF_SAMPLE_CODE = #{uf_sample_code,jdbcType=VARCHAR}
+  	</delete>
+	
+	<insert id="insert" parameterType="com.wzj.pojo.PbtSample">
+    	insert into pbt_sample
+   		<trim prefix="(" suffix=")" suffixOverrides=",">
+   			<if test="uf_attach     !=null">UF_ATTACH     ,</if>
+   			<if test="uf_sample_code     !=null">UF_SAMPLE_CODE     ,</if>
+   			<if test="uf_code_type     !=null">UF_CODE_TYPE     ,</if>
+			<if test="f_add_control     !=null">F_ADD_CONTROL     ,</if>
+			<if test="f_appoint_lab     !=null">F_APPOINT_LAB     ,</if>
+			<if test="f_appoint_person  !=null">F_APPOINT_PERSON  ,</if>
+			<if test="f_appoint_rose    !=null">F_APPOINT_ROSE    ,</if>
+			<if test="f_area            !=null">F_AREA            ,</if>
+			<if test="f_archives_date   !=null">F_ARCHIVES_DATE   ,</if>
+			<if test="f_auditing_date   !=null">F_AUDITING_DATE   ,</if>
+			<if test="f_auditing_person !=null">F_AUDITING_PERSON ,</if>
+			<if test="f_bar_code        !=null">F_BAR_CODE        ,</if>
+			<if test="f_batch_code	    !=null">F_BATCH_CODE	  ,</if>
+			<if test="f_batch_jmcode    !=null">F_BATCH_JMCODE    ,</if>
+			<if test="f_batch_jmtype    !=null">F_BATCH_JMTYPE    ,</if>
+			<if test="f_batch_multiple  !=null">F_BATCH_MULTIPLE  ,</if>
+			<if test="f_batch_type	    !=null">F_BATCH_TYPE	  ,</if>
+			<if test="f_bzpbh           !=null">F_BZPBH           ,</if>
+			<if test="f_code_type       !=null">F_CODE_TYPE       ,</if>
+			<if test="f_commit_date     !=null">F_COMMIT_DATE     ,</if>
+			<if test="f_commit_person   !=null">F_COMMIT_PERSON   ,</if>
+			<if test="f_compute_date    !=null">F_COMPUTE_DATE    ,</if>
+			<if test="f_compute_day     !=null">F_COMPUTE_DAY     ,</if>
+			<if test="f_compute_month   !=null">F_COMPUTE_MONTH   ,</if>
+			<if test="f_compute_week    !=null">F_COMPUTE_WEEK    ,</if>
+			<if test="f_compute_year    !=null">F_COMPUTE_YEAR    ,</if>
+			<if test="f_control_gx      !=null">F_CONTROL_GX      ,</if>
+			<if test="f_csample_date    !=null">F_CSAMPLE_DATE    ,</if>
+			<if test="f_csample_person  !=null">F_CSAMPLE_PERSON  ,</if>
+			<if test="f_csample_result  !=null">F_CSAMPLE_RESULT  ,</if>
+			<if test="f_display_date    !=null">F_DISPLAY_DATE    ,</if>
+			<if test="f_display_day     !=null">F_DISPLAY_DAY     ,</if>
+			<if test="f_display_month   !=null">F_DISPLAY_MONTH   ,</if>
+			<if test="f_display_week    !=null">F_DISPLAY_WEEK    ,</if>
+			<if test="f_display_year    !=null">F_DISPLAY_YEAR    ,</if>
+			<if test="f_docsample_date  !=null">F_DOCSAMPLE_DATE  ,</if>
+			<if test="f_encrypt_code    !=null">F_ENCRYPT_CODE    ,</if>
+			<if test="f_encrypt_person  !=null">F_ENCRYPT_PERSON  ,</if>
+			<if test="f_encrypt_tag     !=null">F_ENCRYPT_TAG     ,</if>
+			<if test="f_encrypt_date    !=null">F_ENCRYPT_DATE    ,</if>
+			<if test="f_enter_library   !=null">F_ENTER_LIBRARY   ,</if>
+			<if test="f_end_code        !=null">F_END_CODE        ,</if>
+			<if test="f_end_state       !=null">F_END_STATE       ,</if>
+			<if test="f_error_count     !=null">F_ERROR_COUNT     ,</if>
+			<if test="f_final_date	    !=null">F_FINAL_DATE	  ,</if>
+			<if test="f_final_person    !=null">F_FINAL_PERSON    ,</if>
+			<if test="f_gather_person   !=null">F_GATHER_PERSON   ,</if>
+			<if test="f_ggxx_findcode   !=null">F_GGXX_FINDCODE   ,</if>
+			<if test="f_gsjq_item       !=null">F_GSJQ_ITEM       ,</if>
+			<if test="f_gsjq_parm       !=null">F_GSJQ_PARM       ,</if>
+			<if test="f_gsjq_value	    !=null">F_GSJQ_VALUE	  ,</if>
+			<if test="f_hand_just       !=null">F_HAND_JUST       ,</if>
+			<if test="f_inlib_date      !=null">F_INLIB_DATE      ,</if>
+			<if test="f_inlib_person    !=null">F_INLIB_PERSON    ,</if>
+			<if test="f_is_pp           !=null">F_IS_PP           ,</if>
+			<if test="f_jq_date         !=null">F_JQ_DATE         ,</if>
+			<if test="f_jq_item         !=null">F_JQ_ITEM         ,</if>
+			<if test="f_jq_parm         !=null">F_JQ_PARM         ,</if>
+			<if test="f_jq_person       !=null">F_JQ_PERSON       ,</if>
+			<if test="f_jq_sample       !=null">F_JQ_SAMPLE       ,</if>
+			<if test="f_jq_state        !=null">F_JQ_STATE        ,</if>
+			<if test="f_jq_value        !=null">F_JQ_VALUE        ,</if>
+			<if test="f_level1          !=null">F_LEVEL1          ,</if>
+			<if test="f_level2          !=null">F_LEVEL2          ,</if>
+			<if test="f_level3          !=null">F_LEVEL3          ,</if>
+			<if test="f_level4          !=null">F_LEVEL4          ,</if>
+			<if test="f_library_count   !=null">F_LIBRARY_COUNT   ,</if>
+			<if test="f_library_state   !=null">F_LIBRARY_STATE   ,</if>
+			<if test="f_main_ppsample   !=null">F_MAIN_PPSAMPLE   ,</if>
+			<if test="f_name_code       !=null">F_NAME_CODE       ,</if>
+			<if test="f_old_sample_code !=null">F_OLD_SAMPLE_CODE ,</if>
+			<if test="f_operation_dept  !=null">F_OPERATION_DEPT  ,</if>
+			<if test="f_operation_person!=null">F_OPERATION_PERSON,</if>
+			<if test="f_temp_tag        !=null">F_TEMP_TAG        ,</if>
+			<if test="f_operation_key   !=null">F_OPERATION_KEY   ,</if>
+			<if test="f_operation_code  !=null">F_OPERATION_CODE  ,</if>
+			<if test="f_person_name	    !=null">F_PERSON_NAME	  ,</if>
+			<if test="f_plan_code       !=null">F_PLAN_CODE       ,</if>
+			<if test="f_poto_a          !=null">F_POTO_A          ,</if>
+			<if test="f_poto_b          !=null">F_POTO_B          ,</if>
+			<if test="f_poto_c          !=null">F_POTO_C          ,</if>
+			<if test="f_poto_d          !=null">F_POTO_D          ,</if>
+			<if test="f_poto_e          !=null">F_POTO_E          ,</if>
+			<if test="f_poto_f          !=null">F_POTO_F          ,</if>
+			<if test="f_pp_date         !=null">F_PP_DATE         ,</if>
+			<if test="f_pp_parm         !=null">F_PP_PARM         ,</if>
+			<if test="f_pp_person       !=null">F_PP_PERSON       ,</if>
+			<if test="f_pp_sample       !=null">F_PP_SAMPLE       ,</if>
+			<if test="f_pp_state        !=null">F_PP_STATE        ,</if>
+			<if test="f_produce_stand   !=null">F_PRODUCE_STAND   ,</if>
+			<if test="f_produce_type    !=null">F_PRODUCE_TYPE    ,</if>
+			<if test="f_quality_type    !=null">F_QUALITY_TYPE    ,</if>
+			<if test="f_rebuild_tag     !=null">F_REBUILD_TAG     ,</if>
+			<if test="f_rebuild_oldkey  !=null">F_REBUILD_OLDKEY  ,</if>
+			<if test="f_rectify_tag     !=null">F_RECTIFY_TAG     ,</if>
+			<if test="f_rectify_sample  !=null">F_RECTIFY_SAMPLE  ,</if>
+			<if test="f_ryjq_item       !=null">F_RYJQ_ITEM       ,</if>
+			<if test="f_ryjq_parm       !=null">F_RYJQ_PARM       ,</if>
+			<if test="f_ryjq_value	    !=null">F_RYJQ_VALUE	  ,</if>
+			<if test="f_sample_code     !=null">F_SAMPLE_CODE     ,</if>
+			<if test="f_sample_count    !=null">F_SAMPLE_COUNT    ,</if>
+			<if test="f_sample_date     !=null">F_SAMPLE_DATE     ,</if>
+			<if test="f_sample_explain  !=null">F_SAMPLE_EXPLAIN  ,</if>
+			<if test="f_sample_key	    !=null">F_SAMPLE_KEY	  ,</if>
+			<if test="f_sample_level    !=null">F_SAMPLE_LEVEL    ,</if>
+			<if test="f_sample_name	    !=null">F_SAMPLE_NAME	  ,</if>
+			<if test="f_sample_new      !=null">F_SAMPLE_NEW      ,</if>
+			<if test="f_sample_person   !=null">F_SAMPLE_PERSON   ,</if>
+			<if test="f_sample_state    !=null">F_SAMPLE_STATE    ,</if>
+			<if test="f_sample_template !=null">F_SAMPLE_TEMPLATE ,</if>
+			<if test="f_samplefj        !=null">F_SAMPLEFJ        ,</if>
+			<if test="f_sampleitems	    !=null">F_SAMPLEITEMS	  ,</if>
+			<if test="f_sampletemp_code !=null">F_SAMPLETEMP_CODE ,</if>
+			<if test="f_sampling_date   !=null">F_SAMPLING_DATE   ,</if>
+			<if test="f_sampling_person !=null">F_SAMPLING_PERSON ,</if>
+			<if test="f_sampling_site   !=null">F_SAMPLING_SITE   ,</if>
+			<if test="f_save_sample	    !=null">F_SAVE_SAMPLE	  ,</if>
+			<if test="f_sh_bdtag        !=null">F_SH_BDTAG        ,</if>
+			<if test="f_sh_sample       !=null">F_SH_SAMPLE       ,</if>
+			<if test="f_spot_code       !=null">F_SPOT_CODE       ,</if>
+			<if test="f_spot_name       !=null">F_SPOT_NAME       ,</if>
+			<if test="f_start_isvaild   !=null">F_START_ISVAILD   ,</if>
+			<if test="f_test_date       !=null">F_TEST_DATE       ,</if>
+			<if test="f_testlib_out     !=null">F_TESTLIB_OUT     ,</if>
+			<if test="f_temp_key        !=null">F_TEMP_KEY        ,</if>
+			<if test="f_tacceptperson   !=null">F_TACCEPTPERSON   ,</if>
+			<if test="f_tdateperson     !=null">F_TDATEPERSON     ,</if>
+			<if test="f_tdispersons     !=null">F_TDISPERSONS     ,</if>
+			<if test="f_tsendperson     !=null">F_TSENDPERSON     ,</if>
+			<if test="f_unusual_state   !=null">F_UNUSUAL_STATE   ,</if>
+			<if test="f_untread_count   !=null">F_UNTREAD_COUNT   ,</if>
+			<if test="f_untread_person  !=null">F_UNTREAD_PERSON  ,</if>
+			<if test="f_untread_date    !=null">F_UNTREAD_DATE    ,</if>
+			<if test="f_workflow_code   !=null">F_WORKFLOW_CODE   ,</if>
+			<if test="f_year_week       !=null">F_YEAR_WEEK       ,</if>
+			<if test="uf_00471          !=null">UF_00471          ,</if>
+			<if test="uf_004711         !=null">UF_004711         ,</if>
+			<if test="uf_0047126        !=null">UF_0047126        ,</if>
+			<if test="uf_0047141        !=null">UF_0047141        ,</if>
+			<if test="uf_0047145        !=null">UF_0047145        ,</if>
+			<if test="uf_0047158        !=null">UF_0047158        ,</if>
+			<if test="uf_0047160        !=null">UF_0047160        ,</if>
+			<if test="uf_0047161        !=null">UF_0047161        ,</if>
+			<if test="uf_0047162        !=null">UF_0047162        ,</if>
+			<if test="uf_0047163        !=null">UF_0047163        ,</if>
+			<if test="uf_0047164        !=null">UF_0047164        ,</if>
+			<if test="uf_0047165        !=null">UF_0047165        ,</if>
+			<if test="uf_0047166        !=null">UF_0047166        ,</if>
+			<if test="uf_0047167        !=null">UF_0047167        ,</if>
+			<if test="uf_0047168        !=null">UF_0047168        ,</if>
+			<if test="uf_0047169        !=null">UF_0047169        ,</if>
+			<if test="uf_0047170        !=null">UF_0047170        ,</if>
+			<if test="uf_0047171        !=null">UF_0047171        ,</if>
+			<if test="uf_0047172        !=null">UF_0047172        ,</if>
+			<if test="uf_0047173        !=null">UF_0047173        ,</if>
+			<if test="uf_0047174        !=null">UF_0047174        ,</if>
+			<if test="uf_0047175        !=null">UF_0047175        ,</if>
+			<if test="uf_0047176        !=null">UF_0047176        ,</if>
+			<if test="uf_0047177        !=null">UF_0047177        ,</if>
+			<if test="uf_0047178        !=null">UF_0047178        ,</if>
+			<if test="uf_0047179        !=null">UF_0047179        ,</if>
+			<if test="uf_0047182        !=null">UF_0047182        ,</if>
+			<if test="uf_0047192        !=null">UF_0047192        ,</if>
+			<if test="uf_0047194        !=null">UF_0047194        ,</if>
+			<if test="uf_00472          !=null">UF_00472          ,</if>
+			<if test="uf_0047208        !=null">UF_0047208        ,</if>
+			<if test="uf_0047211        !=null">UF_0047211        ,</if>
+			<if test="uf_0047212        !=null">UF_0047212        ,</if>
+			<if test="uf_0047213        !=null">UF_0047213        ,</if>
+			<if test="uf_0047214        !=null">UF_0047214        ,</if>
+			<if test="uf_0047215        !=null">UF_0047215        ,</if>
+			<if test="uf_0047216        !=null">UF_0047216        ,</if>
+			<if test="uf_0047217        !=null">UF_0047217        ,</if>
+			<if test="uf_0047218        !=null">UF_0047218        ,</if>
+			<if test="uf_0047220        !=null">UF_0047220        ,</if>
+			<if test="uf_0047221        !=null">UF_0047221        ,</if>
+			<if test="uf_0047225        !=null">UF_0047225        ,</if>
+			<if test="uf_0047226        !=null">UF_0047226        ,</if>
+			<if test="uf_0047227        !=null">UF_0047227        ,</if>
+			<if test="uf_0047228        !=null">UF_0047228        ,</if>
+			<if test="uf_0047230        !=null">UF_0047230        ,</if>
+			<if test="uf_0047231        !=null">UF_0047231        ,</if>
+			<if test="uf_0047232        !=null">UF_0047232        ,</if>
+			<if test="uf_0047233        !=null">UF_0047233        ,</if>
+			<if test="uf_0047234        !=null">UF_0047234        ,</if>
+			<if test="uf_0047235        !=null">UF_0047235        ,</if>
+			<if test="uf_0047236        !=null">UF_0047236        ,</if>
+			<if test="uf_0047237        !=null">UF_0047237        ,</if>
+			<if test="uf_0047238        !=null">UF_0047238        ,</if>
+			<if test="uf_0047239        !=null">UF_0047239        ,</if>
+			<if test="uf_0047240        !=null">UF_0047240        ,</if>
+			<if test="uf_0047241        !=null">UF_0047241        ,</if>
+			<if test="uf_0047242        !=null">UF_0047242        ,</if>
+			<if test="uf_0047243        !=null">UF_0047243        ,</if>
+			<if test="uf_0047244        !=null">UF_0047244        ,</if>
+			<if test="uf_0047245        !=null">UF_0047245        ,</if>
+			<if test="uf_0047246        !=null">UF_0047246        ,</if>
+			<if test="uf_0047247        !=null">UF_0047247        ,</if>
+			<if test="uf_0047248        !=null">UF_0047248        ,</if>
+			<if test="uf_0047249        !=null">UF_0047249        ,</if>
+			<if test="uf_0047250        !=null">UF_0047250        ,</if>
+			<if test="uf_0047251        !=null">UF_0047251        ,</if>
+			<if test="uf_0047252        !=null">UF_0047252        ,</if>
+			<if test="uf_0047253        !=null">UF_0047253        ,</if>
+			<if test="uf_0047254        !=null">UF_0047254        ,</if>
+			<if test="uf_0047255        !=null">UF_0047255        ,</if>
+			<if test="uf_0047256        !=null">UF_0047256        ,</if>
+			<if test="uf_0047257        !=null">UF_0047257        ,</if>
+			<if test="uf_0047258        !=null">UF_0047258        ,</if>
+			<if test="uf_0047259        !=null">UF_0047259        ,</if>
+			<if test="uf_0047260        !=null">UF_0047260        ,</if>
+			<if test="uf_0047261        !=null">UF_0047261        ,</if>
+			<if test="uf_0047262        !=null">UF_0047262        ,</if>
+			<if test="uf_0047263        !=null">UF_0047263        ,</if>
+			<if test="uf_0047264        !=null">UF_0047264        ,</if>
+			<if test="uf_0047265        !=null">UF_0047265        ,</if>
+			<if test="uf_0047266        !=null">UF_0047266        ,</if>
+			<if test="uf_0047267        !=null">UF_0047267        ,</if>
+			<if test="uf_0047268        !=null">UF_0047268        ,</if>
+			<if test="uf_0047269        !=null">UF_0047269        ,</if>
+			<if test="uf_0047270        !=null">UF_0047270        ,</if>
+			<if test="uf_0047271        !=null">UF_0047271        ,</if>
+			<if test="uf_0047272        !=null">UF_0047272        ,</if>
+			<if test="uf_0047273        !=null">UF_0047273        ,</if>
+			<if test="uf_0047274        !=null">UF_0047274        ,</if>
+			<if test="uf_0047275        !=null">UF_0047275        ,</if>
+			<if test="uf_0047276        !=null">UF_0047276        ,</if>
+			<if test="uf_0047277        !=null">UF_0047277        ,</if>
+			<if test="uf_0047278        !=null">UF_0047278        ,</if>
+			<if test="uf_0047279        !=null">UF_0047279        ,</if>
+			<if test="uf_0047280        !=null">UF_0047280        ,</if>
+			<if test="uf_0047281        !=null">UF_0047281        ,</if>
+			<if test="uf_0047282        !=null">UF_0047282        ,</if>
+			<if test="uf_0047283        !=null">UF_0047283        ,</if>
+			<if test="uf_0047284        !=null">UF_0047284        ,</if>
+			<if test="uf_0047285        !=null">UF_0047285        ,</if>
+			<if test="uf_0047286        !=null">UF_0047286        ,</if>
+			<if test="uf_0047287        !=null">UF_0047287        ,</if>
+			<if test="uf_0047288        !=null">UF_0047288        ,</if>
+			<if test="uf_0047289        !=null">UF_0047289        ,</if>
+			<if test="uf_0047290        !=null">UF_0047290        ,</if>
+			<if test="uf_0047291        !=null">UF_0047291        ,</if>
+			<if test="uf_0047292        !=null">UF_0047292        ,</if>
+			<if test="uf_0047293        !=null">UF_0047293        ,</if>
+			<if test="uf_0047294        !=null">UF_0047294        ,</if>
+			<if test="uf_0047295        !=null">UF_0047295        ,</if>
+			<if test="uf_0047296        !=null">UF_0047296        ,</if>
+			<if test="uf_0047298        !=null">UF_0047298        ,</if>
+			<if test="uf_0047299        !=null">UF_0047299        ,</if>
+			<if test="uf_00473          !=null">UF_00473          ,</if>
+			<if test="uf_0047300        !=null">UF_0047300        ,</if>
+			<if test="uf_0047301        !=null">UF_0047301        ,</if>
+			<if test="uf_0047302        !=null">UF_0047302        ,</if>
+			<if test="uf_0047303        !=null">UF_0047303        ,</if>
+			<if test="uf_0047304        !=null">UF_0047304        ,</if>
+			<if test="uf_0047305        !=null">UF_0047305        ,</if>
+			<if test="uf_0047306        !=null">UF_0047306        ,</if>
+			<if test="uf_0047307        !=null">UF_0047307        ,</if>
+			<if test="uf_0047308        !=null">UF_0047308        ,</if>
+			<if test="uf_0047309        !=null">UF_0047309        ,</if>
+			<if test="uf_0047310        !=null">UF_0047310        ,</if>
+			<if test="uf_0047312        !=null">UF_0047312        ,</if>
+			<if test="uf_0047313        !=null">UF_0047313        ,</if>
+			<if test="uf_0047314        !=null">UF_0047314        ,</if>
+			<if test="uf_0047315        !=null">UF_0047315        ,</if>
+			<if test="uf_0047316        !=null">UF_0047316        ,</if>
+			<if test="uf_0047317        !=null">UF_0047317        ,</if>
+			<if test="uf_0047318        !=null">UF_0047318        ,</if>
+			<if test="uf_0047319        !=null">UF_0047319        ,</if>
+			<if test="uf_0047320        !=null">UF_0047320        ,</if>
+			<if test="uf_0047321        !=null">UF_0047321        ,</if>
+			<if test="uf_0047322        !=null">UF_0047322        ,</if>
+			<if test="uf_0047323        !=null">UF_0047323        ,</if>
+			<if test="uf_0047324        !=null">UF_0047324        ,</if>
+			<if test="uf_0047325        !=null">UF_0047325        ,</if>
+			<if test="uf_0047326        !=null">UF_0047326        ,</if>
+			<if test="uf_0047327        !=null">UF_0047327        ,</if>
+			<if test="uf_0047328        !=null">UF_0047328        ,</if>
+			<if test="uf_0047329        !=null">UF_0047329        ,</if>
+			<if test="uf_0047330        !=null">UF_0047330        ,</if>
+			<if test="uf_0047331        !=null">UF_0047331        ,</if>
+			<if test="uf_0047332        !=null">UF_0047332        ,</if>
+			<if test="uf_00474          !=null">UF_00474          ,</if>
+			<if test="uf_00479          !=null">UF_00479          ,</if>
+			<if test="uf_05281          !=null">UF_05281          ,</if>
+			<if test="uf_052810         !=null">UF_052810         ,</if>
+			<if test="uf_052811         !=null">UF_052811         ,</if>
+			<if test="uf_052812         !=null">UF_052812         ,</if>
+			<if test="uf_05282          !=null">UF_05282          ,</if>
+			<if test="uf_05283          !=null">UF_05283          ,</if>
+			<if test="uf_05284          !=null">UF_05284          ,</if>
+			<if test="uf_05285          !=null">UF_05285          ,</if>
+			<if test="uf_05286          !=null">UF_05286          ,</if>
+			<if test="uf_05287          !=null">UF_05287          ,</if>
+			<if test="uf_05288          !=null">UF_05288          ,</if>
+			<if test="uf_05289          !=null">UF_05289          ,</if>
+			<if test="uf_10001          !=null">UF_10001          ,</if>
+		</trim>
+    	<trim prefix="values (" suffix=")" suffixOverrides=",">
+    		<if test="uf_attach     !=null">#{uf_attach     ,jdbcType=VARCHAR},</if>
+    		<if test="uf_sample_code     !=null">#{uf_sample_code     ,jdbcType=VARCHAR},</if>
+    		<if test="uf_code_type       !=null">#{uf_code_type       ,jdbcType=VARCHAR},</if>
+			<if test="f_add_control     !=null">#{f_add_control     ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_lab     !=null">#{f_appoint_lab     ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_person  !=null">#{f_appoint_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_rose    !=null">#{f_appoint_rose    ,jdbcType=VARCHAR},</if>
+			<if test="f_area            !=null">#{f_area            ,jdbcType=VARCHAR},</if>
+			<if test="f_archives_date   !=null">#{f_archives_date   ,jdbcType=DATE},</if>
+			<if test="f_auditing_date   !=null">#{f_auditing_date   ,jdbcType=DATE},</if>
+			<if test="f_auditing_person !=null">#{f_auditing_person ,jdbcType=VARCHAR},</if>
+			<if test="f_bar_code        !=null">#{f_bar_code        ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_code	    !=null">#{f_batch_code		,jdbcType=VARCHAR},</if>
+			<if test="f_batch_jmcode    !=null">#{f_batch_jmcode    ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_jmtype    !=null">#{f_batch_jmtype    ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_multiple  !=null">#{f_batch_multiple  ,jdbcType=INTEGER},</if>
+			<if test="f_batch_type	    !=null">#{f_batch_type	  	,jdbcType=VARCHAR},</if>
+			<if test="f_bzpbh           !=null">#{f_bzpbh           ,jdbcType=VARCHAR},</if>
+			<if test="f_code_type       !=null">#{f_code_type       ,jdbcType=VARCHAR},</if>
+			<if test="f_commit_date     !=null">#{f_commit_date     ,jdbcType=DATE},</if>
+			<if test="f_commit_person   !=null">#{f_commit_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_date    !=null">#{f_compute_date    ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_day     !=null">#{f_compute_day     ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_month   !=null">#{f_compute_month   ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_week    !=null">#{f_compute_week    ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_year    !=null">#{f_compute_year    ,jdbcType=VARCHAR},</if>
+			<if test="f_control_gx      !=null">#{f_control_gx      ,jdbcType=VARCHAR},</if>
+			<if test="f_csample_date    !=null">#{f_csample_date    ,jdbcType=DATE},</if>
+			<if test="f_csample_person  !=null">#{f_csample_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_csample_result  !=null">#{f_csample_result  ,jdbcType=VARCHAR},</if>
+			<if test="f_display_date    !=null">#{f_display_date    ,jdbcType=VARCHAR},</if>
+			<if test="f_display_day     !=null">#{f_display_day     ,jdbcType=VARCHAR},</if>
+			<if test="f_display_month   !=null">#{f_display_month   ,jdbcType=VARCHAR},</if>
+			<if test="f_display_week    !=null">#{f_display_week    ,jdbcType=VARCHAR},</if>
+			<if test="f_display_year    !=null">#{f_display_year    ,jdbcType=VARCHAR},</if>
+			<if test="f_docsample_date  !=null">#{f_docsample_date  ,jdbcType=DATE},</if>
+			<if test="f_encrypt_code    !=null">#{f_encrypt_code    ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_person  !=null">#{f_encrypt_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_tag     !=null">#{f_encrypt_tag     ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_date    !=null">#{f_encrypt_date    ,jdbcType=DATE},</if>
+			<if test="f_enter_library   !=null">#{f_enter_library   ,jdbcType=VARCHAR},</if>
+			<if test="f_end_code        !=null">#{f_end_code        ,jdbcType=VARCHAR},</if>
+			<if test="f_end_state       !=null">#{f_end_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_error_count     !=null">#{f_error_count     ,jdbcType=VARCHAR},</if>
+			<if test="f_final_date	    !=null">#{f_final_date		,jdbcType=DATE},</if>
+			<if test="f_final_person    !=null">#{f_final_person    ,jdbcType=VARCHAR},</if>
+			<if test="f_gather_person   !=null">#{f_gather_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_ggxx_findcode   !=null">#{f_ggxx_findcode   ,jdbcType=VARCHAR},</if>
+			<if test="f_gsjq_item       !=null">#{f_gsjq_item       ,jdbcType=VARCHAR},</if>
+			<if test="f_gsjq_parm       !=null">#{f_gsjq_parm       ,jdbcType=VARCHAR},</if>
+			<if test="f_gsjq_value	    !=null">#{f_gsjq_value		,jdbcType=VARCHAR},</if>
+			<if test="f_hand_just       !=null">#{f_hand_just       ,jdbcType=VARCHAR},</if>
+			<if test="f_inlib_date      !=null">#{f_inlib_date      ,jdbcType=DATE},</if>
+			<if test="f_inlib_person    !=null">#{f_inlib_person    ,jdbcType=VARCHAR},</if>
+			<if test="f_is_pp           !=null">#{f_is_pp           ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_date         !=null">#{f_jq_date         ,jdbcType=DATE},</if>
+			<if test="f_jq_item         !=null">#{f_jq_item         ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_parm         !=null">#{f_jq_parm         ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_person       !=null">#{f_jq_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_sample       !=null">#{f_jq_sample       ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_state        !=null">#{f_jq_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_value        !=null">#{f_jq_value        ,jdbcType=VARCHAR},</if>
+			<if test="f_level1          !=null">#{f_level1          ,jdbcType=VARCHAR},</if>
+			<if test="f_level2          !=null">#{f_level2          ,jdbcType=VARCHAR},</if>
+			<if test="f_level3          !=null">#{f_level3          ,jdbcType=VARCHAR},</if>
+			<if test="f_level4          !=null">#{f_level4          ,jdbcType=VARCHAR},</if>
+			<if test="f_library_count   !=null">#{f_library_count   ,jdbcType=VARCHAR},</if>
+			<if test="f_library_state   !=null">#{f_library_state   ,jdbcType=VARCHAR},</if>
+			<if test="f_main_ppsample   !=null">#{f_main_ppsample   ,jdbcType=VARCHAR},</if>
+			<if test="f_name_code       !=null">#{f_name_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_old_sample_code !=null">#{f_old_sample_code ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_dept  !=null">#{f_operation_dept  ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_person!=null">#{f_operation_person,jdbcType=VARCHAR},</if>
+			<if test="f_temp_tag        !=null">#{f_temp_tag        ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_key   !=null">#{f_operation_key   ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_code  !=null">#{f_operation_code  ,jdbcType=VARCHAR},</if>
+			<if test="f_person_name	    !=null">#{f_person_name		,jdbcType=VARCHAR},</if>
+			<if test="f_plan_code       !=null">#{f_plan_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_a          !=null">#{f_poto_a          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_b          !=null">#{f_poto_b          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_c          !=null">#{f_poto_c          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_d          !=null">#{f_poto_d          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_e          !=null">#{f_poto_e          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_f          !=null">#{f_poto_f          ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_date         !=null">#{f_pp_date         ,jdbcType=DATE},</if>
+			<if test="f_pp_parm         !=null">#{f_pp_parm         ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_person       !=null">#{f_pp_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_sample       !=null">#{f_pp_sample       ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_state        !=null">#{f_pp_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_produce_stand   !=null">#{f_produce_stand   ,jdbcType=VARCHAR},</if>
+			<if test="f_produce_type    !=null">#{f_produce_type    ,jdbcType=VARCHAR},</if>
+			<if test="f_quality_type    !=null">#{f_quality_type    ,jdbcType=VARCHAR},</if>
+			<if test="f_rebuild_tag     !=null">#{f_rebuild_tag     ,jdbcType=VARCHAR},</if>
+			<if test="f_rebuild_oldkey  !=null">#{f_rebuild_oldkey  ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_tag     !=null">#{f_rectify_tag     ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_sample  !=null">#{f_rectify_sample  ,jdbcType=VARCHAR},</if>
+			<if test="f_ryjq_item       !=null">#{f_ryjq_item       ,jdbcType=VARCHAR},</if>
+			<if test="f_ryjq_parm       !=null">#{f_ryjq_parm       ,jdbcType=VARCHAR},</if>
+			<if test="f_ryjq_value	    !=null">#{f_ryjq_value		,jdbcType=VARCHAR},</if>
+			<if test="f_sample_code     !=null">#{f_sample_code     ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_count    !=null">#{f_sample_count    ,jdbcType=INTEGER},</if>
+			<if test="f_sample_date     !=null">#{f_sample_date     ,jdbcType=DATE},</if>
+			<if test="f_sample_explain  !=null">#{f_sample_explain  ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_key	    !=null">#{f_sample_key		,jdbcType=VARCHAR},</if>
+			<if test="f_sample_level    !=null">#{f_sample_level    ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_name	    !=null">#{f_sample_name		,jdbcType=VARCHAR},</if>
+			<if test="f_sample_new      !=null">#{f_sample_new      ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_person   !=null">#{f_sample_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_state    !=null">#{f_sample_state    ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_template !=null">#{f_sample_template ,jdbcType=VARCHAR},</if>
+			<if test="f_samplefj        !=null">#{f_samplefj        ,jdbcType=VARCHAR},</if>
+			<if test="f_sampleitems	    !=null">#{f_sampleitems		,jdbcType=VARCHAR},</if>
+			<if test="f_sampletemp_code !=null">#{f_sampletemp_code ,jdbcType=VARCHAR},</if>
+			<if test="f_sampling_date   !=null">#{f_sampling_date   ,jdbcType=DATE},</if>
+			<if test="f_sampling_person !=null">#{f_sampling_person ,jdbcType=VARCHAR},</if>
+			<if test="f_sampling_site   !=null">#{f_sampling_site   ,jdbcType=VARCHAR},</if>
+			<if test="f_save_sample	    !=null">#{f_save_sample		,jdbcType=VARCHAR},</if>
+			<if test="f_sh_bdtag        !=null">#{f_sh_bdtag        ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_sample       !=null">#{f_sh_sample       ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_code       !=null">#{f_spot_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_name       !=null">#{f_spot_name       ,jdbcType=VARCHAR},</if>
+			<if test="f_start_isvaild   !=null">#{f_start_isvaild   ,jdbcType=VARCHAR},</if>
+			<if test="f_test_date       !=null">#{f_test_date       ,jdbcType=DATE},</if>
+			<if test="f_testlib_out     !=null">#{f_testlib_out     ,jdbcType=VARCHAR},</if>
+			<if test="f_temp_key        !=null">#{f_temp_key        ,jdbcType=VARCHAR},</if>
+			<if test="f_tacceptperson   !=null">#{f_tacceptperson   ,jdbcType=VARCHAR},</if>
+			<if test="f_tdateperson     !=null">#{f_tdateperson     ,jdbcType=DATE},</if>
+			<if test="f_tdispersons     !=null">#{f_tdispersons     ,jdbcType=VARCHAR},</if>
+			<if test="f_tsendperson     !=null">#{f_tsendperson     ,jdbcType=VARCHAR},</if>
+			<if test="f_unusual_state   !=null">#{f_unusual_state   ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_count   !=null">#{f_untread_count   ,jdbcType=INTEGER},</if>
+			<if test="f_untread_person  !=null">#{f_untread_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_date    !=null">#{f_untread_date    ,jdbcType=DATE},</if>
+			<if test="f_workflow_code   !=null">#{f_workflow_code   ,jdbcType=VARCHAR},</if>
+			<if test="f_year_week       !=null">#{f_year_week       ,jdbcType=VARCHAR},</if>
+			<if test="uf_00471          !=null">#{uf_00471          ,jdbcType=VARCHAR},</if>
+			<if test="uf_004711         !=null">#{uf_004711         ,jdbcType=DATE},</if>
+			<if test="uf_0047126        !=null">#{uf_0047126        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047141        !=null">#{uf_0047141        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047145        !=null">#{uf_0047145        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047158        !=null">#{uf_0047158        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047160        !=null">#{uf_0047160        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047161        !=null">#{uf_0047161        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047162        !=null">#{uf_0047162        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047163        !=null">#{uf_0047163        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047164        !=null">#{uf_0047164        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047165        !=null">#{uf_0047165        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047166        !=null">#{uf_0047166        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047167        !=null">#{uf_0047167        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047168        !=null">#{uf_0047168        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047169        !=null">#{uf_0047169        ,jdbcType=INTEGER},</if>
+			<if test="uf_0047170        !=null">#{uf_0047170        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047171        !=null">#{uf_0047171        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047172        !=null">#{uf_0047172        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047173        !=null">#{uf_0047173        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047174        !=null">#{uf_0047174        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047175        !=null">#{uf_0047175        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047176        !=null">#{uf_0047176        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047177        !=null">#{uf_0047177        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047178        !=null">#{uf_0047178        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047179        !=null">#{uf_0047179        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047182        !=null">#{uf_0047182        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047192        !=null">#{uf_0047192        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047194        !=null">#{uf_0047194        ,jdbcType=VARCHAR},</if>
+			<if test="uf_00472          !=null">#{uf_00472          ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047208        !=null">#{uf_0047208        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047211        !=null">#{uf_0047211        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047212        !=null">#{uf_0047212        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047213        !=null">#{uf_0047213        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047214        !=null">#{uf_0047214        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047215        !=null">#{uf_0047215        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047216        !=null">#{uf_0047216        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047217        !=null">#{uf_0047217        ,jdbcType=DATE},</if>
+			<if test="uf_0047218        !=null">#{uf_0047218        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047220        !=null">#{uf_0047220        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047221        !=null">#{uf_0047221        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047225        !=null">#{uf_0047225        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047226        !=null">#{uf_0047226        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047227        !=null">#{uf_0047227        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047228        !=null">#{uf_0047228        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047230        !=null">#{uf_0047230        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047231        !=null">#{uf_0047231        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047232        !=null">#{uf_0047232        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047233        !=null">#{uf_0047233        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047234        !=null">#{uf_0047234        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047235        !=null">#{uf_0047235        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047236        !=null">#{uf_0047236        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047237        !=null">#{uf_0047237        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047238        !=null">#{uf_0047238        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047239        !=null">#{uf_0047239        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047240        !=null">#{uf_0047240        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047241        !=null">#{uf_0047241        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047242        !=null">#{uf_0047242        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047243        !=null">#{uf_0047243        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047244        !=null">#{uf_0047244        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047245        !=null">#{uf_0047245        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047246        !=null">#{uf_0047246        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047247        !=null">#{uf_0047247        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047248        !=null">#{uf_0047248        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047249        !=null">#{uf_0047249        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047250        !=null">#{uf_0047250        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047251        !=null">#{uf_0047251        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047252        !=null">#{uf_0047252        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047253        !=null">#{uf_0047253        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047254        !=null">#{uf_0047254        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047255        !=null">#{uf_0047255        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047256        !=null">#{uf_0047256        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047257        !=null">#{uf_0047257        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047258        !=null">#{uf_0047258        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047259        !=null">#{uf_0047259        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047260        !=null">#{uf_0047260        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047261        !=null">#{uf_0047261        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047262        !=null">#{uf_0047262        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047263        !=null">#{uf_0047263        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047264        !=null">#{uf_0047264        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047265        !=null">#{uf_0047265        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047266        !=null">#{uf_0047266        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047267        !=null">#{uf_0047267        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047268        !=null">#{uf_0047268        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047269        !=null">#{uf_0047269        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047270        !=null">#{uf_0047270        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047271        !=null">#{uf_0047271        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047272        !=null">#{uf_0047272        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047273        !=null">#{uf_0047273        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047274        !=null">#{uf_0047274        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047275        !=null">#{uf_0047275        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047276        !=null">#{uf_0047276        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047277        !=null">#{uf_0047277        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047278        !=null">#{uf_0047278        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047279        !=null">#{uf_0047279        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047280        !=null">#{uf_0047280        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047281        !=null">#{uf_0047281        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047282        !=null">#{uf_0047282        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047283        !=null">#{uf_0047283        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047284        !=null">#{uf_0047284        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047285        !=null">#{uf_0047285        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047286        !=null">#{uf_0047286        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047287        !=null">#{uf_0047287        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047288        !=null">#{uf_0047288        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047289        !=null">#{uf_0047289        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047290        !=null">#{uf_0047290        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047291        !=null">#{uf_0047291        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047292        !=null">#{uf_0047292        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047293        !=null">#{uf_0047293        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047294        !=null">#{uf_0047294        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047295        !=null">#{uf_0047295        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047296        !=null">#{uf_0047296        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047298        !=null">#{uf_0047298        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047299        !=null">#{uf_0047299        ,jdbcType=VARCHAR},</if>
+			<if test="uf_00473          !=null">#{uf_00473          ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047300        !=null">#{uf_0047300        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047301        !=null">#{uf_0047301        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047302        !=null">#{uf_0047302        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047303        !=null">#{uf_0047303        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047304        !=null">#{uf_0047304        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047305        !=null">#{uf_0047305        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047306        !=null">#{uf_0047306        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047307        !=null">#{uf_0047307        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047308        !=null">#{uf_0047308        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047309        !=null">#{uf_0047309        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047310        !=null">#{uf_0047310        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047312        !=null">#{uf_0047312        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047313        !=null">#{uf_0047313        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047314        !=null">#{uf_0047314        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047315        !=null">#{uf_0047315        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047316        !=null">#{uf_0047316        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047317        !=null">#{uf_0047317        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047318        !=null">#{uf_0047318        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047319        !=null">#{uf_0047319        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047320        !=null">#{uf_0047320        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047321        !=null">#{uf_0047321        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047322        !=null">#{uf_0047322        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047323        !=null">#{uf_0047323        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047324        !=null">#{uf_0047324        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047325        !=null">#{uf_0047325        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047326        !=null">#{uf_0047326        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047327        !=null">#{uf_0047327        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047328        !=null">#{uf_0047328        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047329        !=null">#{uf_0047329        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047330        !=null">#{uf_0047330        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047331        !=null">#{uf_0047331        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047332        !=null">#{uf_0047332        ,jdbcType=VARCHAR},</if>
+			<if test="uf_00474          !=null">#{uf_00474          ,jdbcType=VARCHAR},</if>
+			<if test="uf_00479          !=null">#{uf_00479          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05281          !=null">#{uf_05281          ,jdbcType=VARCHAR},</if>
+			<if test="uf_052810         !=null">#{uf_052810         ,jdbcType=VARCHAR},</if>
+			<if test="uf_052811         !=null">#{uf_052811         ,jdbcType=VARCHAR},</if>
+			<if test="uf_052812         !=null">#{uf_052812         ,jdbcType=VARCHAR},</if>
+			<if test="uf_05282          !=null">#{uf_05282          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05283          !=null">#{uf_05283          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05284          !=null">#{uf_05284          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05285          !=null">#{uf_05285          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05286          !=null">#{uf_05286          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05287          !=null">#{uf_05287          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05288          !=null">#{uf_05288          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05289          !=null">#{uf_05289          ,jdbcType=VARCHAR},</if>
+			<if test="uf_10001          !=null">#{uf_10001          ,jdbcType=VARCHAR},</if>
+		</trim>
+  	</insert>
+  	
+	<update id="update" parameterType="com.wzj.pojo.PbtSample">
+    	update PBT_SAMPLE
+    	<set>
+    		<if test="uf_attach     !=null">uf_attach     =#{uf_attach     ,jdbcType=VARCHAR},</if>
+    		<if test="uf_sample_code     !=null">uf_sample_code     =#{uf_sample_code     ,jdbcType=VARCHAR},</if>
+    		<if test="uf_code_type     !=null">uf_code_type     =#{uf_code_type     ,jdbcType=VARCHAR},</if>
+    		<if test="f_add_control     !=null">f_add_control     =#{f_add_control     ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_lab     !=null">f_appoint_lab     =#{f_appoint_lab     ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_person  !=null">f_appoint_person  =#{f_appoint_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_appoint_rose    !=null">f_appoint_rose    =#{f_appoint_rose    ,jdbcType=VARCHAR},</if>
+			<if test="f_area            !=null">f_area            =#{f_area            ,jdbcType=VARCHAR},</if>
+			<if test="f_archives_date   !=null">f_archives_date   =#{f_archives_date   ,jdbcType=DATE},</if>
+			<if test="f_auditing_date   !=null">f_auditing_date   =#{f_auditing_date   ,jdbcType=DATE},</if>
+			<if test="f_auditing_person !=null">f_auditing_person =#{f_auditing_person ,jdbcType=VARCHAR},</if>
+			<if test="f_bar_code        !=null">f_bar_code        =#{f_bar_code        ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_code	    !=null">f_batch_code	  =#{f_batch_code		,jdbcType=VARCHAR},</if>
+			<if test="f_batch_jmcode    !=null">f_batch_jmcode    =#{f_batch_jmcode    ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_jmtype    !=null">f_batch_jmtype    =#{f_batch_jmtype    ,jdbcType=VARCHAR},</if>
+			<if test="f_batch_multiple  !=null">f_batch_multiple  =#{f_batch_multiple  ,jdbcType=INTEGER},</if>
+			<if test="f_batch_type	    !=null">f_batch_type	  =#{f_batch_type	  	,jdbcType=VARCHAR},</if>
+			<if test="f_bzpbh           !=null">f_bzpbh           =#{f_bzpbh           ,jdbcType=VARCHAR},</if>
+			<if test="f_code_type       !=null">f_code_type       =#{f_code_type       ,jdbcType=VARCHAR},</if>
+			<if test="f_commit_date     !=null">f_commit_date     =#{f_commit_date     ,jdbcType=DATE},</if>
+			<if test="f_commit_person   !=null">f_commit_person   =#{f_commit_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_date    !=null">f_compute_date    =#{f_compute_date    ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_day     !=null">f_compute_day     =#{f_compute_day     ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_month   !=null">f_compute_month   =#{f_compute_month   ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_week    !=null">f_compute_week    =#{f_compute_week    ,jdbcType=VARCHAR},</if>
+			<if test="f_compute_year    !=null">f_compute_year    =#{f_compute_year    ,jdbcType=VARCHAR},</if>
+			<if test="f_control_gx      !=null">f_control_gx      =#{f_control_gx      ,jdbcType=VARCHAR},</if>
+			<if test="f_csample_date    !=null">f_csample_date    =#{f_csample_date    ,jdbcType=DATE},</if>
+			<if test="f_csample_person  !=null">f_csample_person  =#{f_csample_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_csample_result  !=null">f_csample_result  =#{f_csample_result  ,jdbcType=VARCHAR},</if>
+			<if test="f_display_date    !=null">f_display_date    =#{f_display_date    ,jdbcType=VARCHAR},</if>
+			<if test="f_display_day     !=null">f_display_day     =#{f_display_day     ,jdbcType=VARCHAR},</if>
+			<if test="f_display_month   !=null">f_display_month   =#{f_display_month   ,jdbcType=VARCHAR},</if>
+			<if test="f_display_week    !=null">f_display_week    =#{f_display_week    ,jdbcType=VARCHAR},</if>
+			<if test="f_display_year    !=null">f_display_year    =#{f_display_year    ,jdbcType=VARCHAR},</if>
+			<if test="f_docsample_date  !=null">f_docsample_date  =#{f_docsample_date  ,jdbcType=DATE},</if>
+			<if test="f_encrypt_code    !=null">f_encrypt_code    =#{f_encrypt_code    ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_person  !=null">f_encrypt_person  =#{f_encrypt_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_tag     !=null">f_encrypt_tag     =#{f_encrypt_tag     ,jdbcType=VARCHAR},</if>
+			<if test="f_encrypt_date    !=null">f_encrypt_date    =#{f_encrypt_date    ,jdbcType=DATE},</if>
+			<if test="f_enter_library   !=null">f_enter_library   =#{f_enter_library   ,jdbcType=VARCHAR},</if>
+			<if test="f_end_code        !=null">f_end_code        =#{f_end_code        ,jdbcType=VARCHAR},</if>
+			<if test="f_end_state       !=null">f_end_state       =#{f_end_state       ,jdbcType=VARCHAR},</if>
+			<if test="f_error_count     !=null">f_error_count     =#{f_error_count     ,jdbcType=VARCHAR},</if>
+			<if test="f_final_date	    !=null">f_final_date	  =#{f_final_date		,jdbcType=DATE},</if>
+			<if test="f_final_person    !=null">f_final_person    =#{f_final_person    ,jdbcType=VARCHAR},</if>
+			<if test="f_gather_person   !=null">f_gather_person   =#{f_gather_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_ggxx_findcode   !=null">f_ggxx_findcode   =#{f_ggxx_findcode   ,jdbcType=VARCHAR},</if>
+			<if test="f_gsjq_item       !=null">f_gsjq_item       =#{f_gsjq_item       ,jdbcType=VARCHAR},</if>
+			<if test="f_gsjq_parm       !=null">f_gsjq_parm       =#{f_gsjq_parm       ,jdbcType=VARCHAR},</if>
+			<if test="f_gsjq_value	    !=null">f_gsjq_value	  =#{f_gsjq_value		,jdbcType=VARCHAR},</if>
+			<if test="f_hand_just       !=null">f_hand_just       =#{f_hand_just       ,jdbcType=VARCHAR},</if>
+			<if test="f_inlib_date      !=null">f_inlib_date      =#{f_inlib_date      ,jdbcType=DATE},</if>
+			<if test="f_inlib_person    !=null">f_inlib_person    =#{f_inlib_person    ,jdbcType=VARCHAR},</if>
+			<if test="f_is_pp           !=null">f_is_pp           =#{f_is_pp           ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_date         !=null">f_jq_date         =#{f_jq_date         ,jdbcType=DATE},</if>
+			<if test="f_jq_item         !=null">f_jq_item         =#{f_jq_item         ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_parm         !=null">f_jq_parm         =#{f_jq_parm         ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_person       !=null">f_jq_person       =#{f_jq_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_sample       !=null">f_jq_sample       =#{f_jq_sample       ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_state        !=null">f_jq_state        =#{f_jq_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_jq_value        !=null">f_jq_value        =#{f_jq_value        ,jdbcType=VARCHAR},</if>
+			<if test="f_level1          !=null">f_level1          =#{f_level1          ,jdbcType=VARCHAR},</if>
+			<if test="f_level2          !=null">f_level2          =#{f_level2          ,jdbcType=VARCHAR},</if>
+			<if test="f_level3          !=null">f_level3          =#{f_level3          ,jdbcType=VARCHAR},</if>
+			<if test="f_level4          !=null">f_level4          =#{f_level4          ,jdbcType=VARCHAR},</if>
+			<if test="f_library_count   !=null">f_library_count   =#{f_library_count   ,jdbcType=VARCHAR},</if>
+			<if test="f_library_state   !=null">f_library_state   =#{f_library_state   ,jdbcType=VARCHAR},</if>
+			<if test="f_main_ppsample   !=null">f_main_ppsample   =#{f_main_ppsample   ,jdbcType=VARCHAR},</if>
+			<if test="f_name_code       !=null">f_name_code       =#{f_name_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_old_sample_code !=null">f_old_sample_code =#{f_old_sample_code ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_dept  !=null">f_operation_dept  =#{f_operation_dept  ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_person!=null">f_operation_person=#{f_operation_person,jdbcType=VARCHAR},</if>
+			<if test="f_temp_tag        !=null">f_temp_tag        =#{f_temp_tag        ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_key   !=null">f_operation_key   =#{f_operation_key   ,jdbcType=VARCHAR},</if>
+			<if test="f_operation_code  !=null">f_operation_code  =#{f_operation_code  ,jdbcType=VARCHAR},</if>
+			<if test="f_person_name	    !=null">f_person_name	  =#{f_person_name		,jdbcType=VARCHAR},</if>
+			<if test="f_plan_code       !=null">f_plan_code       =#{f_plan_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_a          !=null">f_poto_a          =#{f_poto_a          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_b          !=null">f_poto_b          =#{f_poto_b          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_c          !=null">f_poto_c          =#{f_poto_c          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_d          !=null">f_poto_d          =#{f_poto_d          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_e          !=null">f_poto_e          =#{f_poto_e          ,jdbcType=VARCHAR},</if>
+			<if test="f_poto_f          !=null">f_poto_f          =#{f_poto_f          ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_date         !=null">f_pp_date         =#{f_pp_date         ,jdbcType=DATE},</if>
+			<if test="f_pp_parm         !=null">f_pp_parm         =#{f_pp_parm         ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_person       !=null">f_pp_person       =#{f_pp_person       ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_sample       !=null">f_pp_sample       =#{f_pp_sample       ,jdbcType=VARCHAR},</if>
+			<if test="f_pp_state        !=null">f_pp_state        =#{f_pp_state        ,jdbcType=VARCHAR},</if>
+			<if test="f_produce_stand   !=null">f_produce_stand   =#{f_produce_stand   ,jdbcType=VARCHAR},</if>
+			<if test="f_produce_type    !=null">f_produce_type    =#{f_produce_type    ,jdbcType=VARCHAR},</if>
+			<if test="f_quality_type    !=null">f_quality_type    =#{f_quality_type    ,jdbcType=VARCHAR},</if>
+			<if test="f_rebuild_tag     !=null">f_rebuild_tag     =#{f_rebuild_tag     ,jdbcType=VARCHAR},</if>
+			<if test="f_rebuild_oldkey  !=null">f_rebuild_oldkey  =#{f_rebuild_oldkey  ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_tag     !=null">f_rectify_tag     =#{f_rectify_tag     ,jdbcType=VARCHAR},</if>
+			<if test="f_rectify_sample  !=null">f_rectify_sample  =#{f_rectify_sample  ,jdbcType=VARCHAR},</if>
+			<if test="f_ryjq_item       !=null">f_ryjq_item       =#{f_ryjq_item       ,jdbcType=VARCHAR},</if>
+			<if test="f_ryjq_parm       !=null">f_ryjq_parm       =#{f_ryjq_parm       ,jdbcType=VARCHAR},</if>
+			<if test="f_ryjq_value	    !=null">f_ryjq_value	  =#{f_ryjq_value		,jdbcType=VARCHAR},</if>
+			<if test="f_sample_code     !=null">f_sample_code     =#{f_sample_code     ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_count    !=null">f_sample_count    =#{f_sample_count    ,jdbcType=INTEGER},</if>
+			<if test="f_sample_date     !=null">f_sample_date     =#{f_sample_date     ,jdbcType=DATE},</if>
+			<if test="f_sample_explain  !=null">f_sample_explain  =#{f_sample_explain  ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_key	    !=null">f_sample_key	  =#{f_sample_key		,jdbcType=VARCHAR},</if>
+			<if test="f_sample_level    !=null">f_sample_level    =#{f_sample_level    ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_name	    !=null">f_sample_name	  =#{f_sample_name		,jdbcType=VARCHAR},</if>
+			<if test="f_sample_new      !=null">f_sample_new      =#{f_sample_new      ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_person   !=null">f_sample_person   =#{f_sample_person   ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_state    !=null">f_sample_state    =#{f_sample_state    ,jdbcType=VARCHAR},</if>
+			<if test="f_sample_template !=null">f_sample_template =#{f_sample_template ,jdbcType=VARCHAR},</if>
+			<if test="f_samplefj        !=null">f_samplefj        =#{f_samplefj        ,jdbcType=VARCHAR},</if>
+			<if test="f_sampleitems	    !=null">f_sampleitems	  =#{f_sampleitems		,jdbcType=VARCHAR},</if>
+			<if test="f_sampletemp_code !=null">f_sampletemp_code =#{f_sampletemp_code ,jdbcType=VARCHAR},</if>
+			<if test="f_sampling_date   !=null">f_sampling_date   =#{f_sampling_date   ,jdbcType=DATE},</if>
+			<if test="f_sampling_person !=null">f_sampling_person =#{f_sampling_person ,jdbcType=VARCHAR},</if>
+			<if test="f_sampling_site   !=null">f_sampling_site   =#{f_sampling_site   ,jdbcType=VARCHAR},</if>
+			<if test="f_save_sample	    !=null">f_save_sample	  =#{f_save_sample		,jdbcType=VARCHAR},</if>
+			<if test="f_sh_bdtag        !=null">f_sh_bdtag        =#{f_sh_bdtag        ,jdbcType=VARCHAR},</if>
+			<if test="f_sh_sample       !=null">f_sh_sample       =#{f_sh_sample       ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_code       !=null">f_spot_code       =#{f_spot_code       ,jdbcType=VARCHAR},</if>
+			<if test="f_spot_name       !=null">f_spot_name       =#{f_spot_name       ,jdbcType=VARCHAR},</if>
+			<if test="f_start_isvaild   !=null">f_start_isvaild   =#{f_start_isvaild   ,jdbcType=VARCHAR},</if>
+			<if test="f_test_date       !=null">f_test_date       =#{f_test_date       ,jdbcType=DATE},</if>
+			<if test="f_testlib_out     !=null">f_testlib_out     =#{f_testlib_out     ,jdbcType=VARCHAR},</if>
+			<if test="f_temp_key        !=null">f_temp_key        =#{f_temp_key        ,jdbcType=VARCHAR},</if>
+			<if test="f_tacceptperson   !=null">f_tacceptperson   =#{f_tacceptperson   ,jdbcType=VARCHAR},</if>
+			<if test="f_tdateperson     !=null">f_tdateperson     =#{f_tdateperson     ,jdbcType=DATE},</if>
+			<if test="f_tdispersons     !=null">f_tdispersons     =#{f_tdispersons     ,jdbcType=VARCHAR},</if>
+			<if test="f_tsendperson     !=null">f_tsendperson     =#{f_tsendperson     ,jdbcType=VARCHAR},</if>
+			<if test="f_unusual_state   !=null">f_unusual_state   =#{f_unusual_state   ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_count   !=null">f_untread_count   =#{f_untread_count   ,jdbcType=INTEGER},</if>
+			<if test="f_untread_person  !=null">f_untread_person  =#{f_untread_person  ,jdbcType=VARCHAR},</if>
+			<if test="f_untread_date    !=null">f_untread_date    =#{f_untread_date    ,jdbcType=DATE},</if>
+			<if test="f_workflow_code   !=null">f_workflow_code   =#{f_workflow_code   ,jdbcType=VARCHAR},</if>
+			<if test="f_year_week       !=null">f_year_week       =#{f_year_week       ,jdbcType=VARCHAR},</if>
+			<if test="uf_00471          !=null">uf_00471          =#{uf_00471          ,jdbcType=VARCHAR},</if>
+			<if test="uf_004711         !=null">uf_004711         =#{uf_004711         ,jdbcType=DATE},</if>
+			<if test="uf_0047126        !=null">uf_0047126        =#{uf_0047126        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047141        !=null">uf_0047141        =#{uf_0047141        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047145        !=null">uf_0047145        =#{uf_0047145        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047158        !=null">uf_0047158        =#{uf_0047158        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047160        !=null">uf_0047160        =#{uf_0047160        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047161        !=null">uf_0047161        =#{uf_0047161        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047162        !=null">uf_0047162        =#{uf_0047162        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047163        !=null">uf_0047163        =#{uf_0047163        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047164        !=null">uf_0047164        =#{uf_0047164        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047165        !=null">uf_0047165        =#{uf_0047165        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047166        !=null">uf_0047166        =#{uf_0047166        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047167        !=null">uf_0047167        =#{uf_0047167        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047168        !=null">uf_0047168        =#{uf_0047168        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047169        !=null">uf_0047169        =#{uf_0047169        ,jdbcType=INTEGER},</if>
+			<if test="uf_0047170        !=null">uf_0047170        =#{uf_0047170        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047171        !=null">uf_0047171        =#{uf_0047171        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047172        !=null">uf_0047172        =#{uf_0047172        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047173        !=null">uf_0047173        =#{uf_0047173        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047174        !=null">uf_0047174        =#{uf_0047174        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047175        !=null">uf_0047175        =#{uf_0047175        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047176        !=null">uf_0047176        =#{uf_0047176        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047177        !=null">uf_0047177        =#{uf_0047177        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047178        !=null">uf_0047178        =#{uf_0047178        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047179        !=null">uf_0047179        =#{uf_0047179        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047182        !=null">uf_0047182        =#{uf_0047182        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047192        !=null">uf_0047192        =#{uf_0047192        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047194        !=null">uf_0047194        =#{uf_0047194        ,jdbcType=VARCHAR},</if>
+			<if test="uf_00472          !=null">uf_00472          =#{uf_00472          ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047208        !=null">uf_0047208        =#{uf_0047208        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047211        !=null">uf_0047211        =#{uf_0047211        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047212        !=null">uf_0047212        =#{uf_0047212        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047213        !=null">uf_0047213        =#{uf_0047213        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047214        !=null">uf_0047214        =#{uf_0047214        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047215        !=null">uf_0047215        =#{uf_0047215        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047216        !=null">uf_0047216        =#{uf_0047216        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047217        !=null">uf_0047217        =#{uf_0047217        ,jdbcType=DATE},</if>
+			<if test="uf_0047218        !=null">uf_0047218        =#{uf_0047218        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047220        !=null">uf_0047220        =#{uf_0047220        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047221        !=null">uf_0047221        =#{uf_0047221        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047225        !=null">uf_0047225        =#{uf_0047225        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047226        !=null">uf_0047226        =#{uf_0047226        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047227        !=null">uf_0047227        =#{uf_0047227        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047228        !=null">uf_0047228        =#{uf_0047228        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047230        !=null">uf_0047230        =#{uf_0047230        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047231        !=null">uf_0047231        =#{uf_0047231        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047232        !=null">uf_0047232        =#{uf_0047232        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047233        !=null">uf_0047233        =#{uf_0047233        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047234        !=null">uf_0047234        =#{uf_0047234        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047235        !=null">uf_0047235        =#{uf_0047235        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047236        !=null">uf_0047236        =#{uf_0047236        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047237        !=null">uf_0047237        =#{uf_0047237        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047238        !=null">uf_0047238        =#{uf_0047238        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047239        !=null">uf_0047239        =#{uf_0047239        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047240        !=null">uf_0047240        =#{uf_0047240        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047241        !=null">uf_0047241        =#{uf_0047241        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047242        !=null">uf_0047242        =#{uf_0047242        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047243        !=null">uf_0047243        =#{uf_0047243        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047244        !=null">uf_0047244        =#{uf_0047244        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047245        !=null">uf_0047245        =#{uf_0047245        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047246        !=null">uf_0047246        =#{uf_0047246        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047247        !=null">uf_0047247        =#{uf_0047247        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047248        !=null">uf_0047248        =#{uf_0047248        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047249        !=null">uf_0047249        =#{uf_0047249        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047250        !=null">uf_0047250        =#{uf_0047250        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047251        !=null">uf_0047251        =#{uf_0047251        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047252        !=null">uf_0047252        =#{uf_0047252        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047253        !=null">uf_0047253        =#{uf_0047253        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047254        !=null">uf_0047254        =#{uf_0047254        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047255        !=null">uf_0047255        =#{uf_0047255        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047256        !=null">uf_0047256        =#{uf_0047256        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047257        !=null">uf_0047257        =#{uf_0047257        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047258        !=null">uf_0047258        =#{uf_0047258        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047259        !=null">uf_0047259        =#{uf_0047259        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047260        !=null">uf_0047260        =#{uf_0047260        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047261        !=null">uf_0047261        =#{uf_0047261        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047262        !=null">uf_0047262        =#{uf_0047262        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047263        !=null">uf_0047263        =#{uf_0047263        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047264        !=null">uf_0047264        =#{uf_0047264        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047265        !=null">uf_0047265        =#{uf_0047265        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047266        !=null">uf_0047266        =#{uf_0047266        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047267        !=null">uf_0047267        =#{uf_0047267        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047268        !=null">uf_0047268        =#{uf_0047268        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047269        !=null">uf_0047269        =#{uf_0047269        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047270        !=null">uf_0047270        =#{uf_0047270        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047271        !=null">uf_0047271        =#{uf_0047271        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047272        !=null">uf_0047272        =#{uf_0047272        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047273        !=null">uf_0047273        =#{uf_0047273        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047274        !=null">uf_0047274        =#{uf_0047274        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047275        !=null">uf_0047275        =#{uf_0047275        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047276        !=null">uf_0047276        =#{uf_0047276        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047277        !=null">uf_0047277        =#{uf_0047277        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047278        !=null">uf_0047278        =#{uf_0047278        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047279        !=null">uf_0047279        =#{uf_0047279        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047280        !=null">uf_0047280        =#{uf_0047280        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047281        !=null">uf_0047281        =#{uf_0047281        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047282        !=null">uf_0047282        =#{uf_0047282        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047283        !=null">uf_0047283        =#{uf_0047283        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047284        !=null">uf_0047284        =#{uf_0047284        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047285        !=null">uf_0047285        =#{uf_0047285        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047286        !=null">uf_0047286        =#{uf_0047286        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047287        !=null">uf_0047287        =#{uf_0047287        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047288        !=null">uf_0047288        =#{uf_0047288        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047289        !=null">uf_0047289        =#{uf_0047289        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047290        !=null">uf_0047290        =#{uf_0047290        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047291        !=null">uf_0047291        =#{uf_0047291        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047292        !=null">uf_0047292        =#{uf_0047292        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047293        !=null">uf_0047293        =#{uf_0047293        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047294        !=null">uf_0047294        =#{uf_0047294        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047295        !=null">uf_0047295        =#{uf_0047295        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047296        !=null">uf_0047296        =#{uf_0047296        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047298        !=null">uf_0047298        =#{uf_0047298        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047299        !=null">uf_0047299        =#{uf_0047299        ,jdbcType=VARCHAR},</if>
+			<if test="uf_00473          !=null">uf_00473          =#{uf_00473          ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047300        !=null">uf_0047300        =#{uf_0047300        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047301        !=null">uf_0047301        =#{uf_0047301        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047302        !=null">uf_0047302        =#{uf_0047302        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047303        !=null">uf_0047303        =#{uf_0047303        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047304        !=null">uf_0047304        =#{uf_0047304        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047305        !=null">uf_0047305        =#{uf_0047305        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047306        !=null">uf_0047306        =#{uf_0047306        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047307        !=null">uf_0047307        =#{uf_0047307        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047308        !=null">uf_0047308        =#{uf_0047308        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047309        !=null">uf_0047309        =#{uf_0047309        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047310        !=null">uf_0047310        =#{uf_0047310        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047312        !=null">uf_0047312        =#{uf_0047312        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047313        !=null">uf_0047313        =#{uf_0047313        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047314        !=null">uf_0047314        =#{uf_0047314        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047315        !=null">uf_0047315        =#{uf_0047315        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047316        !=null">uf_0047316        =#{uf_0047316        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047317        !=null">uf_0047317        =#{uf_0047317        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047318        !=null">uf_0047318        =#{uf_0047318        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047319        !=null">uf_0047319        =#{uf_0047319        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047320        !=null">uf_0047320        =#{uf_0047320        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047321        !=null">uf_0047321        =#{uf_0047321        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047322        !=null">uf_0047322        =#{uf_0047322        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047323        !=null">uf_0047323        =#{uf_0047323        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047324        !=null">uf_0047324        =#{uf_0047324        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047325        !=null">uf_0047325        =#{uf_0047325        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047326        !=null">uf_0047326        =#{uf_0047326        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047327        !=null">uf_0047327        =#{uf_0047327        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047328        !=null">uf_0047328        =#{uf_0047328        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047329        !=null">uf_0047329        =#{uf_0047329        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047330        !=null">uf_0047330        =#{uf_0047330        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047331        !=null">uf_0047331        =#{uf_0047331        ,jdbcType=VARCHAR},</if>
+			<if test="uf_0047332        !=null">uf_0047332        =#{uf_0047332        ,jdbcType=VARCHAR},</if>
+			<if test="uf_00474          !=null">uf_00474          =#{uf_00474          ,jdbcType=VARCHAR},</if>
+			<if test="uf_00479          !=null">uf_00479          =#{uf_00479          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05281          !=null">uf_05281          =#{uf_05281          ,jdbcType=VARCHAR},</if>
+			<if test="uf_052810         !=null">uf_052810         =#{uf_052810         ,jdbcType=VARCHAR},</if>
+			<if test="uf_052811         !=null">uf_052811         =#{uf_052811         ,jdbcType=VARCHAR},</if>
+			<if test="uf_052812         !=null">uf_052812         =#{uf_052812         ,jdbcType=VARCHAR},</if>
+			<if test="uf_05282          !=null">uf_05282          =#{uf_05282          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05283          !=null">uf_05283          =#{uf_05283          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05284          !=null">uf_05284          =#{uf_05284          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05285          !=null">uf_05285          =#{uf_05285          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05286          !=null">uf_05286          =#{uf_05286          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05287          !=null">uf_05287          =#{uf_05287          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05288          !=null">uf_05288          =#{uf_05288          ,jdbcType=VARCHAR},</if>
+			<if test="uf_05289          !=null">uf_05289          =#{uf_05289          ,jdbcType=VARCHAR},</if>
+			<if test="uf_10001          !=null">uf_10001          =#{uf_10001          ,jdbcType=VARCHAR},</if>
+<!-- 			<if test="uf_result          !=null">uf_result          =#{uf_result          ,jdbcType=TINYINT},</if> -->
+		</set>
+    	where UF_SAMPLE_CODE = #{uf_sample_code,jdbcType=VARCHAR}
+  	</update>
+</mapper>

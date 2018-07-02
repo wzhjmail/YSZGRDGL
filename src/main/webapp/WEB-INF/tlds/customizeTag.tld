@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <description>/</description>
+    <display-name>Permission Tag Library</display-name>
+    <tlib-version>1.0</tlib-version>
+    <short-name>myshiro</short-name><!-- 标签的默认prefix,如 <shiro:permission name="">中的shiro -->
+    <uri>/customize-tags</uri><!-- 引用时的地址 -->
+    <tag>
+        <description>权限控制标签</description>
+        <name>hasAnyPermission</name><!-- 标签定义的名称,如 <shiro:permission name="">中的permission-->
+        <tag-class>com.wzj.util.HasAnyPermissionTag</tag-class>  <!--标签控制类-->
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>name</name><!-- 标签中的属性，如<shiro:permission name="">中的name -->
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>String</type>
+        </attribute>
+    </tag>
+</taglib>

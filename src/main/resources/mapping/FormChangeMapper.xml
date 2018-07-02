@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.FormChangeMapper">
+  <resultMap id="BaseResultMap" type="com.wzj.pojo.FormChange">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="PID" jdbcType="INTEGER" property="pid" />
+    <result column="Remark" jdbcType="VARCHAR" property="remark" />
+    <result column="CompanyName_Old" jdbcType="VARCHAR" property="companynameOld" />
+    <result column="CompanyName_New" jdbcType="VARCHAR" property="companynameNew" />
+    <result column="Address_Old" jdbcType="VARCHAR" property="addressOld" />
+    <result column="Address_New" jdbcType="VARCHAR" property="addressNew" />
+    <result column="Linkman_Old" jdbcType="VARCHAR" property="linkmanOld" />
+    <result column="Linkman_New" jdbcType="VARCHAR" property="linkmanNew" />
+    <result column="Material_Old" jdbcType="VARCHAR" property="materialOld" />
+    <result column="Material_New" jdbcType="VARCHAR" property="materialNew" />
+    <result column="PrintType_Old" jdbcType="VARCHAR" property="printtypeOld" />
+    <result column="PrintType_New" jdbcType="VARCHAR" property="printtypeNew" />
+    <result column="CertAppDate_Old" jdbcType="VARCHAR" property="certappdateOld" />
+    <result column="CertAppDate_New" jdbcType="VARCHAR" property="certappdateNew" />
+    <result column="CertToDate_Old" jdbcType="VARCHAR" property="certtodateOld" />
+    <result column="CertToDate_New" jdbcType="VARCHAR" property="certtodateNew" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="OffshootOrganiz" jdbcType="VARCHAR" property="offshootorganiz" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="CheckDate" jdbcType="TIMESTAMP" property="checkdate" />
+    <result column="ChekConceit" jdbcType="VARCHAR" property="chekconceit" />
+    <result column="CheckMan" jdbcType="VARCHAR" property="checkman" />
+    <result column="CheckRemark" jdbcType="VARCHAR" property="checkremark" />
+    <result column="UpdateCause" jdbcType="VARCHAR" property="updatecause" />
+    <result column="Coporation_old" jdbcType="VARCHAR" property="coporationOld" />
+    <result column="Coporation_New" jdbcType="VARCHAR" property="coporationNew" />
+    <result column="LinkmanTel_old" jdbcType="VARCHAR" property="linkmantelOld" />
+    <result column="LinkmanTel_new" jdbcType="VARCHAR" property="linkmantelNew" />
+    <result column="CoporationTel_old" jdbcType="VARCHAR" property="coporationtelOld" />
+    <result column="CoporationTel_New" jdbcType="VARCHAR" property="coporationtelNew" />
+    <result column="PostCode_old" jdbcType="VARCHAR" property="postcodeOld" />
+    <result column="PostCode_new" jdbcType="VARCHAR" property="postcodeNew" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+  </resultMap>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from ys_change where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ys_change where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.wzj.pojo.FormChange">
+    insert into ys_change
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <!-- <if test="id != null">
+        ID,
+      </if> -->
+      <if test="pid != null">
+        PID,
+      </if>
+      <if test="remark != null">
+        Remark,
+      </if>
+      <if test="companynameOld != null">
+        CompanyName_Old,
+      </if>
+      <if test="companynameNew != null">
+        CompanyName_New,
+      </if>
+      <if test="addressOld != null">
+        Address_Old,
+      </if>
+      <if test="addressNew != null">
+        Address_New,
+      </if>
+      <if test="linkmanOld != null">
+        Linkman_Old,
+      </if>
+      <if test="linkmanNew != null">
+        Linkman_New,
+      </if>
+      <if test="materialOld != null">
+        Material_Old,
+      </if>
+      <if test="materialNew != null">
+        Material_New,
+      </if>
+      <if test="printtypeOld != null">
+        PrintType_Old,
+      </if>
+      <if test="printtypeNew != null">
+        PrintType_New,
+      </if>
+      <if test="certappdateOld != null">
+        CertAppDate_Old,
+      </if>
+      <if test="certappdateNew != null">
+        CertAppDate_New,
+      </if>
+      <if test="certtodateOld != null">
+        CertToDate_Old,
+      </if>
+      <if test="certtodateNew != null">
+        CertToDate_New,
+      </if>
+      <if test="status != null">
+        Status,
+      </if>
+      <if test="offshootorganiz != null">
+        OffshootOrganiz,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="checkdate != null">
+        CheckDate,
+      </if>
+      <if test="chekconceit != null">
+        ChekConceit,
+      </if>
+      <if test="checkman != null">
+        CheckMan,
+      </if>
+      <if test="checkremark != null">
+        CheckRemark,
+      </if>
+      <if test="updatecause != null">
+        UpdateCause,
+      </if>
+      <if test="coporationOld != null">
+        Coporation_old,
+      </if>
+      <if test="coporationNew != null">
+        Coporation_New,
+      </if>
+      <if test="linkmantelOld != null">
+        LinkmanTel_old,
+      </if>
+      <if test="linkmantelNew != null">
+        LinkmanTel_new,
+      </if>
+      <if test="coporationtelOld != null">
+        CoporationTel_old,
+      </if>
+      <if test="coporationtelNew != null">
+        CoporationTel_New,
+      </if>
+      <if test="postcodeOld != null">
+        PostCode_old,
+      </if>
+      <if test="postcodeNew != null">
+        PostCode_new,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="titleno != null">
+        titleno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+     <!--  <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if> -->
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="companynameOld != null">
+        #{companynameOld,jdbcType=VARCHAR},
+      </if>
+      <if test="companynameNew != null">
+        #{companynameNew,jdbcType=VARCHAR},
+      </if>
+      <if test="addressOld != null">
+        #{addressOld,jdbcType=VARCHAR},
+      </if>
+      <if test="addressNew != null">
+        #{addressNew,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanOld != null">
+        #{linkmanOld,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanNew != null">
+        #{linkmanNew,jdbcType=VARCHAR},
+      </if>
+      <if test="materialOld != null">
+        #{materialOld,jdbcType=VARCHAR},
+      </if>
+      <if test="materialNew != null">
+        #{materialNew,jdbcType=VARCHAR},
+      </if>
+      <if test="printtypeOld != null">
+        #{printtypeOld,jdbcType=VARCHAR},
+      </if>
+      <if test="printtypeNew != null">
+        #{printtypeNew,jdbcType=VARCHAR},
+      </if>
+      <if test="certappdateOld != null">
+        #{certappdateOld,jdbcType=VARCHAR},
+      </if>
+      <if test="certappdateNew != null">
+        #{certappdateNew,jdbcType=VARCHAR},
+      </if>
+      <if test="certtodateOld != null">
+        #{certtodateOld,jdbcType=VARCHAR},
+      </if>
+      <if test="certtodateNew != null">
+        #{certtodateNew,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="offshootorganiz != null">
+        #{offshootorganiz,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkdate != null">
+        #{checkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="chekconceit != null">
+        #{chekconceit,jdbcType=VARCHAR},
+      </if>
+      <if test="checkman != null">
+        #{checkman,jdbcType=VARCHAR},
+      </if>
+      <if test="checkremark != null">
+        #{checkremark,jdbcType=VARCHAR},
+      </if>
+      <if test="updatecause != null">
+        #{updatecause,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationOld != null">
+        #{coporationOld,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationNew != null">
+        #{coporationNew,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmantelOld != null">
+        #{linkmantelOld,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmantelNew != null">
+        #{linkmantelNew,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationtelOld != null">
+        #{coporationtelOld,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationtelNew != null">
+        #{coporationtelNew,jdbcType=VARCHAR},
+      </if>
+      <if test="postcodeOld != null">
+        #{postcodeOld,jdbcType=VARCHAR},
+      </if>
+      <if test="postcodeNew != null">
+        #{postcodeNew,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="titleno != null">
+        #{titleno,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="update" parameterType="com.wzj.pojo.FormChange">
+    update ys_change
+    <set>
+      <if test="pid != null">
+        PID = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="companynameOld != null">
+        CompanyName_Old = #{companynameOld,jdbcType=VARCHAR},
+      </if>
+      <if test="companynameNew != null">
+        CompanyName_New = #{companynameNew,jdbcType=VARCHAR},
+      </if>
+      <if test="addressOld != null">
+        Address_Old = #{addressOld,jdbcType=VARCHAR},
+      </if>
+      <if test="addressNew != null">
+        Address_New = #{addressNew,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanOld != null">
+        Linkman_Old = #{linkmanOld,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanNew != null">
+        Linkman_New = #{linkmanNew,jdbcType=VARCHAR},
+      </if>
+      <if test="materialOld != null">
+        Material_Old = #{materialOld,jdbcType=VARCHAR},
+      </if>
+      <if test="materialNew != null">
+        Material_New = #{materialNew,jdbcType=VARCHAR},
+      </if>
+      <if test="printtypeOld != null">
+        PrintType_Old = #{printtypeOld,jdbcType=VARCHAR},
+      </if>
+      <if test="printtypeNew != null">
+        PrintType_New = #{printtypeNew,jdbcType=VARCHAR},
+      </if>
+      <if test="certappdateOld != null">
+        CertAppDate_Old = #{certappdateOld,jdbcType=VARCHAR},
+      </if>
+      <if test="certappdateNew != null">
+        CertAppDate_New = #{certappdateNew,jdbcType=VARCHAR},
+      </if>
+      <if test="certtodateOld != null">
+        CertToDate_Old = #{certtodateOld,jdbcType=VARCHAR},
+      </if>
+      <if test="certtodateNew != null">
+        CertToDate_New = #{certtodateNew,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="offshootorganiz != null">
+        OffshootOrganiz = #{offshootorganiz,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkdate != null">
+        CheckDate = #{checkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="chekconceit != null">
+        ChekConceit = #{chekconceit,jdbcType=VARCHAR},
+      </if>
+      <if test="checkman != null">
+        CheckMan = #{checkman,jdbcType=VARCHAR},
+      </if>
+      <if test="checkremark != null">
+        CheckRemark = #{checkremark,jdbcType=VARCHAR},
+      </if>
+      <if test="updatecause != null">
+        UpdateCause = #{updatecause,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationOld != null">
+        Coporation_old = #{coporationOld,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationNew != null">
+        Coporation_New = #{coporationNew,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmantelOld != null">
+        LinkmanTel_old = #{linkmantelOld,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmantelNew != null">
+        LinkmanTel_new = #{linkmantelNew,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationtelOld != null">
+        CoporationTel_old = #{coporationtelOld,jdbcType=VARCHAR},
+      </if>
+      <if test="coporationtelNew != null">
+        CoporationTel_New = #{coporationtelNew,jdbcType=VARCHAR},
+      </if>
+      <if test="postcodeOld != null">
+        PostCode_old = #{postcodeOld,jdbcType=VARCHAR},
+      </if>
+      <if test="postcodeNew != null">
+        PostCode_new = #{postcodeNew,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="titleno != null">
+        titleno = #{titleno,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType!=null and changeType!=''">
+      	changeType=#{changeType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findByIds" resultMap="BaseResultMap">
+  	select * from ys_change where id in
+  	<foreach item="item" index="index" collection="list"
+  		open="(" separator="," close=")">#{item}
+  	</foreach>
+  	and OffshootOrganiz=#{branchId,jdbcType=VARCHAR}
+  </select>
+  <select id="findByIds2" resultMap="BaseResultMap">
+  	select * from ys_change where id in
+  	<foreach item="item" index="index" collection="list"
+  		open="(" separator="," close=")">#{item}
+  	</foreach>
+  </select>
+  <select id="getChangeFormById" resultMap="BaseResultMap">
+  	select * from ys_change where ID =#{id,jdbcType=INTEGER}
+  </select>
+  <select id="getOngoing" parameterType="com.wzj.DTO.AppDTO" resultMap="BaseResultMap">
+  select * from ys_change where status &gt;=#{begin,jdbcType=INTEGER} 
+  and status &lt; #{end,jdbcType=INTEGER} 
+  and OffshootOrganiz=#{branchId,jdbcType=VARCHAR}
+  </select>
+  <select id="getOngoingByBranch" parameterType="com.wzj.DTO.AppDTO" resultMap="BaseResultMap">
+  select * from ys_change where status=#{status,jdbcType=INTEGER} and OffshootOrganiz=#{branchId,jdbcType=VARCHAR}
+  </select>
+  <select id="getOngoingAll" parameterType="com.wzj.DTO.AppDTO" resultMap="BaseResultMap">
+  select * from ys_change where status &gt;=#{begin,jdbcType=INTEGER} 
+  and status &lt; #{end,jdbcType=INTEGER}
+  </select>
+  <select id="getOngoingByStatus" parameterType="com.wzj.DTO.AppDTO" resultMap="BaseResultMap">
+  select * from ys_change where status=#{status,jdbcType=INTEGER}
+  </select>
+  <select id="getOngoingById" resultMap="BaseResultMap">
+  select * from ys_change where status=#{status,jdbcType=INTEGER} and offshootorganiz=#{branchId,jdbcType=VARCHAR}
+  </select>
+</mapper>

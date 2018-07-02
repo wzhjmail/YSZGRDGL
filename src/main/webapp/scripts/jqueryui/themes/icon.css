@@ -1,0 +1,110 @@
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('icons/edit_add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('icons/pencil.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('icons/edit_remove.png') no-repeat center center;
+}
+.icon-save{
+	background:url('icons/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('icons/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('icons/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('icons/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('icons/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('icons/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('icons/search.png') no-repeat center center;
+}
+
+/*导入*/
+.icon-llb2{
+	background:url('icons/llb2.png') no-repeat center center;
+}
+/*重置密码*/
+.icon-permission{
+	background:url('icons/permission.png') no-repeat center center;
+}
+/*注销*/
+.icon-logout{
+	background:url('icons/system-log-out.png') no-repeat center center;
+}
+/*个人中心*/
+.icon-person{
+	background:url('icons/gerenzhongxin.png') no-repeat center center;
+}
+/*人员管理*/
+.icon-baseinfo{
+	background:url('icons/message.png') no-repeat center center;
+}
+/*课程管理*/
+.icon-llb{
+	background:url('icons/llb.png') no-repeat center center;
+}
+/*分配学员*/
+.icon-pingban{
+	background:url('icons/pingban.png') no-repeat center center;
+}
+/*我的考试*/
+.icon-rz{
+	background:url('icons/riji.png') no-repeat center center;
+}
+/*学员考试*/
+.icon-copyllb{
+	background:url('icons/copyllb.png') no-repeat center center;
+}
+/*学生情况*/
+.icon-copyplane{
+	background:url('icons/copyplane.png') no-repeat center center;
+}
+/*播放按钮*/
+.icon-play{
+	background:url('icons/play.png') no-repeat center center;
+}
+
+.icon-print{
+	background:url('icons/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('icons/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('icons/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('icons/tip.png') no-repeat center center;
+}
+
+.icon-mini-add{
+	background:url('icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('icons/mini_refresh.png') no-repeat center center;
+}

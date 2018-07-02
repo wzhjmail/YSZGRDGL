@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.PrintEquipmentMapper">
+    <resultMap id="BaseResultMap" type="com.wzj.pojo.PrintEquipment">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="companyId" jdbcType="INTEGER" property="companyId" />
+        <result column="companyName" jdbcType="VARCHAR" property="companyName" />
+        <result column="printName" jdbcType="VARCHAR" property="printName" />
+        <result column="printModel" jdbcType="VARCHAR" property="printModel" />
+        <result column="printPlace" jdbcType="VARCHAR" property="printPlace" />
+        <result column="printNumber" jdbcType="INTEGER" property="printNumber" />
+        <result column="printNotes" jdbcType="VARCHAR" property="printNotes" />
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.wzj.pojo.PrintEquipment">
+        insert into ys_print
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="companyId != null">companyId,</if>
+            <if test="companyName != null">companyName,</if>
+            <if test="printName != null">printName,</if>
+            <if test="printModel != null">printModel,</if>
+            <if test="printPlace != null">printPlace,</if>
+            <if test="printNumber != null">printNumber,</if>
+            <if test="printNotes != null">printNotes,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="companyId != null">
+                #{companyId,jdbcType=INTEGER},
+            </if>
+            <if test="companyName != null">
+                #{companyName,jdbcType=VARCHAR},
+            </if>
+            <if test="printName != null">
+                #{printName,jdbcType=VARCHAR},
+            </if>
+            <if test="printModel != null">
+                #{printModel,jdbcType=VARCHAR},
+            </if>
+            <if test="printPlace != null">
+                #{printPlace,jdbcType=VARCHAR},
+            </if>
+            <if test="printNumber != null">
+                #{printNumber ,jdbcType=INTEGER},
+            </if>
+            <if test="printNotes != null">
+                #{printNotes ,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateById" parameterType="com.wzj.pojo.PrintEquipment">
+        update  ys_print
+        <set>
+            <if test="companyId != null">
+                companyId=#{companyId,jdbcType=INTEGER},
+            </if>
+            <if test="companyName != null">
+                companyName=#{companyName,jdbcType=VARCHAR},
+            </if>
+            <if test="printName != null">
+                printName=#{printName,jdbcType=VARCHAR},
+            </if>
+            <if test="printModel != null">
+                printModel=#{printModel,jdbcType=VARCHAR},
+            </if>
+            <if test="printPlace != null">
+                printPlace=#{printPlace,jdbcType=VARCHAR},
+            </if>
+            <if test="printNumber != null">
+                printNumber=#{printNumber,jdbcType=INTEGER},
+            </if>
+            <if test="printNotes != null">
+                printNotes=#{printNotes,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

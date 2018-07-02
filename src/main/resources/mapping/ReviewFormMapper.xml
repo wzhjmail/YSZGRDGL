@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.dao.ReviewFormMapper">
+  <resultMap id="BaseResultMap" type="com.wzj.pojo.ReviewForm">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="PID" jdbcType="INTEGER" property="pid" />
+    <result column="TitleNo" jdbcType="VARCHAR" property="titleno" />
+    <result column="EnterpriseName" jdbcType="VARCHAR" property="enterpriseName" />
+    <result column="ChiCenter" jdbcType="VARCHAR" property="chiCenter" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="psman" jdbcType="CHAR" property="psman" />
+    <result column="fzman" jdbcType="CHAR" property="fzman" />
+    <result column="pzman" jdbcType="CHAR" property="pzman" />
+    <result column="hzman" jdbcType="CHAR" property="hzman" />
+    <result column="psdate" jdbcType="TIMESTAMP" property="psdate" />
+    <result column="fzdate" jdbcType="TIMESTAMP" property="fzdate" />
+    <result column="pzdate" jdbcType="TIMESTAMP" property="pzdate" />
+    <result column="expertIds" jdbcType="VARCHAR" property="expertIds" />
+    <result column="MavinIdea" jdbcType="VARCHAR" property="mavinIdea" />
+    <result column="FrameworkIdea" jdbcType="VARCHAR" property="frameworkIdea" />
+    <result column="CenterIdea" jdbcType="VARCHAR" property="centerIdea" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, PID, TitleNo, EnterpriseName, ChiCenter, CreateDate, Status, psman, fzman, pzman, 
+    hzman, psdate, fzdate, pzdate, expertIds,MavinIdea,frameworkIdea,centerIdea
+  </sql>
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ys_syndic
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteById" parameterType="java.lang.Integer">
+    delete from ys_syndic
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.wzj.pojo.ReviewForm">
+    insert into ys_syndic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="pid != null">
+        PID,
+      </if>
+      <if test="titleno != null">
+        TitleNo,
+      </if>
+      <if test="enterpriseName != null">
+        EnterpriseName,
+      </if>
+      <if test="chiCenter != null">
+        ChiCenter,
+      </if>
+      <if test="createDate != null">
+        CreateDate,
+      </if>
+      <if test="status != null">
+        Status,
+      </if>
+      <if test="psman != null">
+        psman,
+      </if>
+      <if test="fzman != null">
+        fzman,
+      </if>
+      <if test="pzman != null">
+        pzman,
+      </if>
+      <if test="hzman != null">
+        hzman,
+      </if>
+      <if test="psdate != null">
+        psdate,
+      </if>
+      <if test="fzdate != null">
+        fzdate,
+      </if>
+      <if test="pzdate != null">
+        pzdate,
+      </if>
+      <if test="expertIds != null">
+        expertIds,
+      </if>
+      <if test="syndic != null">
+        Syndic,
+      </if>
+      <if test="mavinIdea != null">
+        MavinIdea,
+      </if>
+      <if test="frameworkIdea != null">
+        FrameworkIdea,
+      </if>
+      <if test="centerIdea != null">
+        CenterIdea,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="titleno != null">
+        #{titleno,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseName != null">
+        #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="chiCenter != null">
+        #{chiCenter,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="psman != null">
+        #{psman,jdbcType=CHAR},
+      </if>
+      <if test="fzman != null">
+        #{fzman,jdbcType=CHAR},
+      </if>
+      <if test="pzman != null">
+        #{pzman,jdbcType=CHAR},
+      </if>
+      <if test="hzman != null">
+        #{hzman,jdbcType=CHAR},
+      </if>
+      <if test="psdate != null">
+        #{psdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fzdate != null">
+        #{fzdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pzdate != null">
+        #{pzdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expertIds != null">
+        #{expertIds,jdbcType=VARCHAR},
+      </if>
+      <if test="syndic != null">
+        #{syndic,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="mavinIdea != null">
+        #{mavinIdea,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="frameworkIdea != null">
+        #{frameworkIdea,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="centerIdea != null">
+        #{centerIdea,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="update" parameterType="com.wzj.pojo.ReviewForm">
+    update ys_syndic
+    <set>
+      <if test="pid != null">
+        PID = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="titleno != null">
+        TitleNo = #{titleno,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseName != null">
+        EnterpriseName = #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="chiCenter != null">
+        ChiCenter = #{chiCenter,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        CreateDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="psman != null">
+        psman = #{psman,jdbcType=CHAR},
+      </if>
+      <if test="fzman != null">
+        fzman = #{fzman,jdbcType=CHAR},
+      </if>
+      <if test="pzman != null">
+        pzman = #{pzman,jdbcType=CHAR},
+      </if>
+      <if test="hzman != null">
+        hzman = #{hzman,jdbcType=CHAR},
+      </if>
+      <if test="psdate != null">
+        psdate = #{psdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fzdate != null">
+        fzdate = #{fzdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pzdate != null">
+        pzdate = #{pzdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expertIds != null">
+        expertIds = #{expertIds,jdbcType=VARCHAR},
+      </if>
+      <if test="syndic != null">
+        Syndic = #{syndic,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="mavinIdea != null">
+        MavinIdea = #{mavinIdea,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="frameworkIdea != null">
+        FrameworkIdea = #{frameworkIdea,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="centerIdea != null">
+        CenterIdea = #{centerIdea,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+ 
+</mapper>
